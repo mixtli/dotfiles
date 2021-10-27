@@ -1,0 +1,59 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python"
+  ],
+  // python config
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.jediEnabled": false,
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.config/nvim/utils/snips"
+  ],
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
+  "tsserver.npm": "/usr/local/bin/npm",
+  "tsserver.enableJavascript": true,
+  "tsserver.log": "off",
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings": {
+    "<cr>": [
+      "expandable?",
+      "expand",
+      "open"
+    ],
+    "v": "open:vsplit"
+  },
+  "solargraph.commandPath": "/Users/rmcclain/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/solargraph-0.39.12/bin/solargraph",
+  "solargraph.useBundler": false,
+  "solargraph.completion": true,
+  "solargraph.hover": true,
+  "solargraph.definitions": true,
+  "solargraph.symbols": true,
+  "solargraph.references": true,
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  }
+}

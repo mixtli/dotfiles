@@ -1,0 +1,3 @@
+nvim/.config/nvim/bundle/*
+nvim/.config/nvim/autoload/plugged/*
+mutt/.mutt

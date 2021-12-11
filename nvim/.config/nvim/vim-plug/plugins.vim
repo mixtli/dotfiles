@@ -33,6 +33,7 @@ Plug 'bogado/file-line'
 
 " Fzf - Find files, search lists
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 
 " Plugins for git

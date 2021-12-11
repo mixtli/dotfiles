@@ -124,22 +124,21 @@ let g:which_key_map.m = {
 " git commands
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
-      \ 'a' : [':Gwrite', 'Add'],
-      \ 'b' : [':Gblame', 'Blame'],
-      \ 'c' : [':Gcommit', 'Commit'],
-      \ 'd' : [':Gdiff!', 'Diff'],
+      \ 'a' : [':Git write', 'Add'],
+      \ 'b' : [':Git blame', 'Blame'],
+      \ 'c' : [':Git commit', 'Commit'],
+      \ 'd' : [':Git diff!', 'Diff'],
       \ 'e' : 'Edit Version',
-      \ 'f' : [':0Glog', 'Log File'],
-      \ 'g' : 'Git',
-      \ 'l' : [':Glog', 'Log'],
-      \ 'm' : 'Move',
-      \ 'p' : 'Grep',
-      \ 'r' : [':Gread', 'Checkout'],
-      \ 's' : [':Gstatus', 'Status'],
+      \ 'f' : [':0Git log', 'Log File'],
+      \ 'l' : [':Git log', 'Log'],
+      \ 'm' : [':GRename', 'Rename'],
+      \ 'p' : [':Git Grep', 'Grep' ],
+      \ 'r' : [':Git read', 'Checkout'],
+      \ 's' : [':Git', 'Status'],
       \ 'V' : [':GV', 'GV (history)'],
       \ 'v' : [':GV!', 'GV (history current file)'],
       \ 'w' : [':Gbrowse', 'Web Browser'],
-      \ 'x' : [':Gremove', 'Remove'],
+      \ 'x' : [':GRemove', 'Remove'],
       \ }
 
 " terminal commands

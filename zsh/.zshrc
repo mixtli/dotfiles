@@ -148,3 +148,6 @@ export PATH=$PATH:/Users/rmcclain/Personal/bin
 
 # Some crap on Catalina needed to get some things to compile
 export SDKROOT=$(xcrun --show-sdk-path)
+source <(kubectl completion zsh)
+
+alias k="kubectl"

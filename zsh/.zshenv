@@ -3,7 +3,8 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export SEMAPHORE_AUTH_TOKEN=sWS23zWJjuuNrPA1BJx3
 export FLOWDOCK_API_TOKEN=1defee6045b0712eb08f9e3203bbf096
 #export BUNDLE_GITHUB__COM=rmcclain:5ae81fd9846782215943f4d8c2e53d061265e1bf
-export BUNDLE_GITHUB__COM=rmcclain:51026ec33f9d1f7b86c0f181c013ac64a1bfffc2
+#export BUNDLE_GITHUB__COM=rmcclain:51026ec33f9d1f7b86c0f181c013ac64a1bfffc2
+export BUNDLE_GITHUB__COM=rmcclaincf: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
 
 #export BUNDLE_GITHUB__COM=5ae81fd9846782215943f4d8c2e53d061265e1bf:x-oauth-basic
 export DISABLE_SPRING=1
@@ -16,6 +17,8 @@ export PYTHONPATH=src
 export SLACK_TOKEN=xoxp-355951114711-422946485702-434539982550-941c45403f361dadb4a3b49e95e87e75
 #export GITHUB_ACCESS_TOKEN=9e14ffaaffb46b0840d14ffe944120755b8ba4ab
 export GITHUB_ACCESS_TOKEN=c3d2f0ddd7955be6c383bb1be181b0053317137f
+export GITHUB_TOKEN=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
+
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/Users/rmcclain/Library/Python/3.7/bin:$PATH"
 export PATH="$PATH:/Users/rmcclain/Projects/f8-development-env-tools/bin"
@@ -33,3 +36,6 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/bin:$PATH
+export DEVSPACE_SUBDOMAIN=eng01
+
+

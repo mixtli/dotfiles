@@ -28,4 +28,4 @@ source $HOME/.config/nvim/plug-config/telescope.vim
 source $HOME/.config/nvim/plug-config/neomux.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
 "luafile $HOME/.config/nvim/plug-config/compe-config.lua
-
+luafile $HOME/.config/nvim/plug-config/nvim-lsp-installer.lua

@@ -53,7 +53,7 @@ let g:which_key_map.n = {
       \ 's' : [':NERDTreeFind' , 'find'],
       \ }
 
-let g:which_key_map.a = {
+let g:which_key_map.d = {
       \ 'name' : '+neomux',
       \ 'o' : 'open',
       \ 's' : 'swap',
@@ -64,7 +64,7 @@ let g:which_key_map.a = {
       \ 'v' : 'vertical',
       \ }
 
-" s is for search
+ " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
       \ '/' : [':History/'     , 'history'],
@@ -93,7 +93,7 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF'          , 'FZF'],
       \ }
 
-" tmux commands
+ " tmux commands
 let g:which_key_map.l = {
       \ 'name' : '+language' ,
       \ 't' : [':TestNearest', 'Test Nearest'],
@@ -158,33 +158,15 @@ let g:which_key_map.t = {
       \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
       \ }
 
-let g:which_key_map.r = {
-      \ 'name' : '+ruby' ,
-      \ 's' : [':call RunNearestSpec()'                               , 'run nearest spec'],
-      \ 'l' : [':call RunLastSpec()'                               , 'run last spec'],
-      \ 'f' : [':call RunCurrentSpecFile()'                               , 'run spec file'],
-      \ 'a' : [':call RunAllSpecs()'                               , 'run all specs'],
-      \ }
-
-" devspace bindings
-let g:which_key_map.d = {
-      \ 'name' : '+devspace' ,
-      \ 'd' : [':VtrSendCommandToRunner! devspace dev'        , 'dev'],
-      \ 'pd' : [':VtrSendCommandToRunner! devspace dev -i -p development'        , 'development profile'],
-      \ 'pt' : [':VtrSendCommandToRunner! devspace dev -i -p test'        , 'test profile'],
-      \ }
-
-" CoC bindings
-"xmap <leader>cs  <Plug>(coc-codeaction-selected)
-"let g:which_key_map.c = {
-"      \ 'name' : '+CoC' ,
-"      \ 'a' : [ '<Plug>(coc-codeaction)',   'action' ],
-"      \ 'e' : [ ':CocCommand explorer',   'explorer' ],
-"      \ 'f' : [ '<Plug>(coc-format-selected)',   'format' ],
-"      \ 'r' : [ '<Plug>(coc-rename)',   'rename' ],
-"      \ 's' : [ '<Plug>(coc-codeaction-selected)',   'selected' ],
-"      \ 'c' : [ '<Plug>(coc-fix-current)',   'fix current' ]
-"      \ }
+" let g:which_key_map.r = {
+"       \ 'name' : '+ruby' ,
+"       \ 's' : [':call RunNearestSpec()'                               , 'run nearest spec'],
+"       \ 'l' : [':call RunLastSpec()'                               , 'run last spec'],
+"       \ 'f' : [':call RunCurrentSpecFile()'                               , 'run spec file'],
+"       \ 'a' : [':call RunAllSpecs()'                               , 'run all specs'],
+"       \ }
+"
+"
 "
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")

@@ -17,7 +17,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/rmcclain/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 unsetopt BEEP
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -83,10 +83,6 @@ source ~/.zsh/fzf_git.sh
 source ~/.zsh/mappings.zsh
 source ~/.zsh/cursor.zsh
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#export SDKMAN_DIR="/Users/rmcclain/.sdkman"
-#[[ -s "/Users/rmcclain/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/rmcclain/.sdkman/bin/sdkman-init.sh"
-
 
 unsetopt no_share_history
 setopt share_history
@@ -139,12 +135,11 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-alias ms3="aws s3 --profile minio --endpoint-url http://files.rmcclain.engineering-devspace-sandbox.my.devspace.host"
 
 eval "$(ssh-agent -s)"
 
-source /Users/rmcclain/.zsh/crypto.env
-export PATH=$PATH:/Users/rmcclain/Personal/bin
+#source $HOME/.zsh/crypto.env
+export PATH=$PATH:$HOME/Personal/bin
 
 # Some crap on Catalina needed to get some things to compile
-export SDKROOT=$(xcrun --show-sdk-path)
+#export SDKROOT=$(xcrun --show-sdk-path)

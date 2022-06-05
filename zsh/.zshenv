@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:$HOME/Projects/crowdflower-devtools/bin:$PATH:$HOME/bin:$HOME/anaconda3/bin
+export PATH=$PATH:/usr/local/bin
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export SEMAPHORE_AUTH_TOKEN=sWS23zWJjuuNrPA1BJx3
 export FLOWDOCK_API_TOKEN=1defee6045b0712eb08f9e3203bbf096
@@ -20,8 +20,7 @@ export GITHUB_ACCESS_TOKEN=c3d2f0ddd7955be6c383bb1be181b0053317137f
 export GITHUB_TOKEN=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
 
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="/Users/rmcclain/Library/Python/3.7/bin:$PATH"
-export PATH="$PATH:/Users/rmcclain/Projects/f8-development-env-tools/bin"
+export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 export PATH=/usr/local/nvim-osx64/bin:$PATH
 export PATH=/Users/$USER/Projects/f8-tools/bin:$PATH
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
@@ -29,9 +28,8 @@ export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 
 export DEVSPACE_VAR_BUNDLE_GITHUB__COM=$BUNDLE_GITHUB__COM 
-#export DEVSPACE_DOMAIN=rmcclaincf-poc.engineering-devspace-sandbox.my.devspace.host
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
-export PATH=/Users/rmcclain/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOPATH/bin:$PATH

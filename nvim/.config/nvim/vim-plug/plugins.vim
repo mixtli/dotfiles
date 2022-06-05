@@ -106,6 +106,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer', { 'branch': 'main' }
 "Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 " Use a fork to fix some shit
 Plug 'rinx/lspsaga.nvim', { 'branch': 'main' }
@@ -118,6 +119,8 @@ Plug 'hrsh7th/nvim-cmp', { 'branch': 'main' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 Plug 'nikvdp/neomux'
+
+Plug 'roxma/vim-tmux-clipboard'
 
 call plug#end()
 

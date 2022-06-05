@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/mixtli/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -80,7 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-fzf-history-search zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git fzf zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-. /opt/homebrew/etc/profile.d/z.sh
+# . /opt/homebrew/etc/profile.d/z.sh
 
 
 export GOPATH=$HOME/go
@@ -126,3 +126,5 @@ alias ls=lsd
 
 source ~/.zsh/ruby.zsh
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+
+source $HOME/.zsh_secrets

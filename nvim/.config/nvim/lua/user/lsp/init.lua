@@ -9,5 +9,6 @@ require "user.lsp.null-ls"
 
 
 require'lspconfig'.solang.setup{}
+require'lspconfig'.solargraph.setup{}
 
 -- require'lspconfig'.solidity_ls.setup{}

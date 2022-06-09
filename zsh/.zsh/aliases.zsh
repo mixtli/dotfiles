@@ -8,4 +8,4 @@ alias gpu='[[ -z $(git config "branch.$(git symbolic-ref --short HEAD).merge") ]
            git push'
 
 alias slack="slack-term -config ~/.config/slack-term/config"
-
+alias k="kubectl"

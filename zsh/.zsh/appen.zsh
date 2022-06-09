@@ -45,4 +45,23 @@ function ecr_login() {
 alias connect-aws='cd /Users/rmcclain/Applications/aws-cli-utilities-master/AWS\ CLI\ -\ Idaptive\ V1;python3 -m AWSCLI -t appen.my'
 
 export AWS_PROFILE=dev
+export CA_ACCOUNT=220211432420
+export CA_DOMAIN=connect-appen 
+export CA_REPO=appen-connect-repo
 
+function ca_list_packages {
+  aws codeartifact --region us-west-2 list-packages --domain $CA_DOMAIN --domain-owner $CA_ACCOUNT --repository $CA_REPO
+}
+
+function ca_list_package_versions {
+  aws codeartifact --region us-west-2 list-package-versions --domain $CA_DOMAIN --domain-owner $CA_ACCOUNT --repository $CA_REPO --format maven --namespace com.appen.connect --package $1 
+}
+
+function ca_list_package_assets {
+
+  aws codeartifact --region us-west-2 list-package-version-assets --domain $CA_DOMAIN --domain-owner $CA_ACCOUNT --repository $CA_REPO --format maven --namespace com.appen.connect --package $1 --package-version $2 
+}
+
+function ca_get_package_asset {
+  echo aws codeartifact --region us-west-2 get-package-version-asset --domain $CA_DOMAIN --domain-owner $CA_ACCOUNT --repository $CA_REPO --format maven --namespace com.appen.connect --package $1 --package-version $2 --asset $3 $3
+}

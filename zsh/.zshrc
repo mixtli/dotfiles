@@ -80,7 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,4 +127,10 @@ alias ls=lsd
 source ~/.zsh/ruby.zsh
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 
+
+for file in ~/.zsh/*.zsh; do
+    source "$file"
+done
+
 source $HOME/.zsh_secrets
+

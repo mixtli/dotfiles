@@ -94,6 +94,7 @@ return packer.startup(function(use)
 -- use { "aserowy/tmux.nvim", branch='main'}
 
   use 'christoomey/vim-tmux-navigator'
+  use 'christoomey/vim-tmux-runner'
 
   use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 

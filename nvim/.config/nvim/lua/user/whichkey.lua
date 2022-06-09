@@ -99,6 +99,11 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+  d = {
+    name = "Devspace",
+    d = { ":VtrSendCommandToRunner! devspace dev<cr>", "dev"},
+    t = { ":VtrSendCommandToRunner! devspace dev -p test<cr>", "test"}
+  },
 
   p = {
     name = "Packer",

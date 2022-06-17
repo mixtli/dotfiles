@@ -21,7 +21,9 @@ require "user.whichkey"
 require "user.autocommands"
 require "user.tmux"
 require "user.tabnine"
+require "user.gh"
 
 vim.cmd 'source ~/.config/nvim/lua/user/vimade.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/close_tag.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/fzf.vim'
+vim.cmd 'source ~/.config/nvim/vimscript/test.vim'

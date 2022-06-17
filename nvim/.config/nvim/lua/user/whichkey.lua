@@ -116,7 +116,55 @@ local mappings = {
 
   g = {
     name = "Git",
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+
+    h = {
+            name = "+Github",
+            c = {
+                name = "+Commits",
+                c = { "<cmd>GHCloseCommit<cr>", "Close" },
+                e = { "<cmd>GHExpandCommit<cr>", "Expand" },
+                o = { "<cmd>GHOpenToCommit<cr>", "Open To" },
+                p = { "<cmd>GHPopOutCommit<cr>", "Pop Out" },
+                z = { "<cmd>GHCollapseCommit<cr>", "Collapse" },
+            },
+            i = {
+                name = "+Issues",
+                p = { "<cmd>GHPreviewIssue<cr>", "Preview" },
+            },
+            l = {
+                name = "+Litee",
+                t = { "<cmd>LTPanel<cr>", "Toggle Panel" },
+            },
+            r = {
+                name = "+Review",
+                b = { "<cmd>GHStartReview<cr>", "Begin" },
+                c = { "<cmd>GHCloseReview<cr>", "Close" },
+                d = { "<cmd>GHDeleteReview<cr>", "Delete" },
+                e = { "<cmd>GHExpandReview<cr>", "Expand" },
+                s = { "<cmd>GHSubmitReview<cr>", "Submit" },
+                z = { "<cmd>GHCollapseReview<cr>", "Collapse" },
+            },
+            p = {
+                name = "+Pull Request",
+                c = { "<cmd>GHClosePR<cr>", "Close" },
+                d = { "<cmd>GHPRDetails<cr>", "Details" },
+                e = { "<cmd>GHExpandPR<cr>", "Expand" },
+                o = { "<cmd>GHOpenPR<cr>", "Open" },
+                p = { "<cmd>GHPopOutPR<cr>", "PopOut" },
+                r = { "<cmd>GHRefreshPR<cr>", "Refresh" },
+                t = { "<cmd>GHOpenToPR<cr>", "Open To" },
+                z = { "<cmd>GHCollapsePR<cr>", "Collapse" },
+            },
+            t = {
+                name = "+Threads",
+                c = { "<cmd>GHCreateThread<cr>", "Create" },
+                n = { "<cmd>GHNextThread<cr>", "Next" },
+                t = { "<cmd>GHToggleThread<cr>", "Toggle" },
+            },
+        },
+    g = { "<cmd>:LazyGit<CR>", "Lazygit" },
+    f = { "<cmd>:LazyGitFilter<CR>", "LazygitFilter"},
+    C = { "<cmd>:LazyGitFilter<CR>", "LazygitFilterCurrent"},
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -180,8 +228,16 @@ local mappings = {
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
-
   t = {
+    name = "Test",
+    n = { "<cmd>TestNearest<cr>", "Test Nearest"},
+    f = { "<cmd>TestFile<cr>", "Test File"},
+    s = { "<cmd>TestSuite<cr>", "Test Suite"},
+    l = { "<cmd>TestLast<cr>", "Test Last"},
+    v = { "<cmd>TestVisit<cr>", "Test Visit"},
+  },
+
+  T = {
     name = "Terminal",
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
     u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },

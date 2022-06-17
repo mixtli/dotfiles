@@ -51,6 +51,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
+  use 'kdheepak/lazygit.nvim'
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
@@ -85,6 +86,10 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
 
+  -- Testing 
+  use 'vim-test/vim-test'
+  use 'tpope/vim-dispatch'
+
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -102,6 +107,10 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive"
   use "tpope/vim-rhubarb"
+  use {
+    'ldelossa/gh.nvim',
+    requires = { { 'ldelossa/litee.nvim' } }
+  }
 
   -- Dims inactive panes
   use 'TaDaa/vimade'

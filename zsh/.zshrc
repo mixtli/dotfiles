@@ -80,7 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
+plugins=(git z zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-# . /opt/homebrew/etc/profile.d/z.sh
+#. /opt/homebrew/etc/profile.d/z.sh
 
 
 export GOPATH=$HOME/go
@@ -134,3 +134,4 @@ done
 
 source $HOME/.zsh_secrets
 
+export PATH="/usr/local/opt/kubernetes-cli@1.22/bin:$PATH"

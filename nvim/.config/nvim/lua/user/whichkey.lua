@@ -146,10 +146,10 @@ local mappings = {
             },
             p = {
                 name = "+Pull Request",
-                c = { "<cmd>GHClosePR<cr>", "Close" },
+                c = { "<cmd>GHClosePR<cr><cmd>NvimTreeOpen<cr>", "Close" },
                 d = { "<cmd>GHPRDetails<cr>", "Details" },
                 e = { "<cmd>GHExpandPR<cr>", "Expand" },
-                o = { "<cmd>GHOpenPR<cr>", "Open" },
+                o = { "<cmd>NvimTreeClose<cr><cmd>GHOpenPR<cr>", "Open" },
                 p = { "<cmd>GHPopOutPR<cr>", "PopOut" },
                 r = { "<cmd>GHRefreshPR<cr>", "Refresh" },
                 t = { "<cmd>GHOpenToPR<cr>", "Open To" },
@@ -216,6 +216,8 @@ local mappings = {
       "Workspace Symbols",
     },
   },
+
+  n = { "<cmd>NvimTreeToggle<cr>", "Toggle Tree"},
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -241,6 +243,7 @@ local mappings = {
     name = "Terminal",
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
     u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
+    l = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
     t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
     p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },

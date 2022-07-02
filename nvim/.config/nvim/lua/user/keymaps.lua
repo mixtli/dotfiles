@@ -60,7 +60,7 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
-keymap("n", "<C-f>", ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", opts)
+keymap("n", "<C-f>", ":lua require('telescope.builtin').find_files({hidden = true, find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden', config_dir }}, require('telescope.themes').get_dropdown{previewer = false})<cr>", opts)
 
 -- Terminal --
 -- Better terminal navigation

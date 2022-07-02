@@ -67,8 +67,9 @@ return packer.startup(function(use)
   }
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
+  use "morhetz/gruvbox"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -105,8 +106,10 @@ return packer.startup(function(use)
 
   use 'christoomey/vim-tmux-navigator'
   use 'christoomey/vim-tmux-runner'
+  use 'sbdchd/vim-run'
 
-  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+  -- use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+  use 'kevinhwang91/rnvimr'
 
   -- Git
   use "lewis6991/gitsigns.nvim"
@@ -125,6 +128,21 @@ return packer.startup(function(use)
 
   use 'alvan/vim-closetag'
   use 'rizzatti/dash.vim'
+
+  -- Devcontainers
+  use 'jamestthompson3/nvim-remote-containers'
+
+
+  -- Language support
+  use 'towolf/vim-helm'
+
+  -- Debugging
+  use 'mfussenegger/nvim-dap'
+  use 'suketa/nvim-dap-ruby'
+  use 'rcarriga/nvim-dap-ui'
+  use 'nvim-telescope/telescope-dap.nvim'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'mfussenegger/nvim-dap-python'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

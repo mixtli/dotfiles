@@ -1,3 +1,10 @@
+export AWS_PROFILE=dev
+export CA_ACCOUNT=220211432420
+export CA_DOMAIN=connect-appen 
+export CA_REPO=appen-connect-repo
+export DEVSPACE_SUBDOMAIN=eng01
+
+
 #SANDBOX_HOSTS=(ec2-54-165-34-242.compute-1.amazonaws.com ec2-52-202-201-50.compute-1.amazonaws.com ec2-52-90-230-155.compute-1.amazonaws.com ec2-34-201-98-213.compute-1.amazonaws.com)
 #SANDBOX_HOSTS=(ec2-52-23-209-171.compute-1.amazonaws.com ec2-174-129-54-27.compute-1.amazonaws.com ec2-54-152-153-168.compute-1.amazonaws.com ec2-107-21-88-2.compute-1.amazonaws.com)
 #SANDBOX_HOSTS=$(aws ec2 describe-instances --region us-east-1 --output text --filter "Name=tag:Name,Values=sandbox-ecs" --query 'Reservations[*].Instances[*].PublicDnsName' | tr '\n' ' ')
@@ -44,10 +51,6 @@ function ecr_login() {
 }
 alias connect-aws='cd /Users/rmcclain/Applications/aws-cli-utilities-master/AWS\ CLI\ -\ Idaptive\ V1;python3 -m AWSCLI -t appen.my'
 
-export AWS_PROFILE=dev
-export CA_ACCOUNT=220211432420
-export CA_DOMAIN=connect-appen 
-export CA_REPO=appen-connect-repo
 
 function ca_list_packages {
   aws codeartifact --region us-west-2 list-packages --domain $CA_DOMAIN --domain-owner $CA_ACCOUNT --repository $CA_REPO

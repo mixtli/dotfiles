@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+
+#puts "Average Buy Price) "
+#
+#avg_price = gets
+#
+#
+#puts "Total amount invested) "
+#
+#amount = gets
+#
+#
+#puts "safety order price) "
+#
+#so_price = gets
+#
+#
+#puts "bounce pct)"
+#
+#bounce_pct = gets
+
+
+
+original_average_price = 50.0
+original_volume = 1000.0
+new_price = 20.0
+new_average_price = 40.0
+
+
+
+new_volume = (original_volume * new_price * (original_average_price - new_average_price))/(original_average_price * (new_average_price - new_price))
+puts new_volume

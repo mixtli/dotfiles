@@ -1,3 +1,5 @@
 nvim/.config/nvim/bundle/*
 nvim/.config/nvim/autoload/plugged/*
 mutt/.mutt
+__pycache__
+.DS_Store

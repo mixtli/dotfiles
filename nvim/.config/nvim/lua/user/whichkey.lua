@@ -100,6 +100,22 @@ local mappings = {
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
   d = {
+    name = "Debug",
+    t = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI"},
+    c = { "<cmd>lua require('dap').continue()<cr>", "Continue"},
+    d = { "<cmd>lua require('dap').clear_breakpoints()<cr>", "Clear breakpoints"},
+    s = { "<cmd>lua require('dap').step_over()<cr>", "Step Over"},
+    i = { "<cmd>lua require('dap').step_into()<cr>", "Step Into"},
+    b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle Breakpoint"},
+    B = { "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint Condition: ')<cr>", "Breakpoint Condition"},
+    l = { "<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log Point Message: ')<cr>", "Log breakpoint"},
+    r = { "<cmd>lua require('dap').repl.open()<cr>", "Repl Open"},
+    R = { "<cmd>lua require('dap').run_last()<cr>", "Run Last"},
+    C = { "<cmd>lua require('dap').close()<cr>", "Close"},
+    T = { "<cmd>lua require('dap').terminate()<cr>", "Terminate"},
+    D = { "<cmd>lua require('dap').disconnect()<cr>", "Disconnect"},
+  },
+  D = {
     name = "Devspace",
     d = { ":VtrSendCommandToRunner! devspace dev<cr>", "dev"},
     t = { ":VtrSendCommandToRunner! devspace dev -p test<cr>", "test"}
@@ -218,6 +234,8 @@ local mappings = {
   },
 
   n = { "<cmd>NvimTreeToggle<cr>", "Toggle Tree"},
+  r = { "<cmd>:RnvimrToggle<cr>", "Ranger"},
+  R = { "<cmd>Run<cr>", "Run"},
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },

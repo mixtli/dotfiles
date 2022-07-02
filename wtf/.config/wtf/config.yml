@@ -14,7 +14,7 @@ wtf:
   grid:
     # How _wide_ the columns are, in terminal characters. In this case we have
     # six columns, each of which are 35 characters wide
-    columns: [80, 80, 80 ]
+    columns: [60, 60, 60, 60 ]
 
     # How _high_ the rows are, in terminal lines. In this case we have five rows
     # that support ten line of text, one of three lines, and one of four
@@ -32,7 +32,7 @@ wtf:
   term: "xterm-256color"
   mods:
     github:
-      apiKey: "c3d2f0ddd7955be6c383bb1be181b0053317137f"
+      apiKey: "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"
       customQueries:
         othersPRs:
           title: "Others Pull Requests"
@@ -40,7 +40,8 @@ wtf:
       enabled: true
       enableStatus: true
       repositories:
-        - Crowdflower/Crowdflower
+        - Crowdflower/akon
+        - Crowdflower/make
         - Crowdflower/f8-development-env-tools
         - Crowdflower/customer-data-service
         - Crowdflower/audit-service
@@ -49,7 +50,7 @@ wtf:
         top: 0
         left: 0
         height: 3
-        width: 1
+        width: 2
       refreshInterval: 300
       username: "rmcclaincf"
     jira:
@@ -66,31 +67,31 @@ wtf:
         top: 0
         left: 1 
         height: 3
-        width: 1
+        width: 2
       project: "_Client Workspace"
       refreshInterval: 900
       username: "ron.mcclain"
       #verifyServerCertificate: true
-    bittrex:
-      colors:
-        base:
-          name: orange
-          displayName: red
-        market:
-          name: red
-          field: white
-          value: green
-      enabled: true
-      position:
-        top: 0
-        left: 2 
-        height: 3
-        width: 1
-      refreshInterval: 5
-      summary:
-        USD:
-          displayName: Bitcoin
-          market:
-          - BTC
-          - LTC
-          - ETH
+      #bittrex:
+      #  colors:
+      #    base:
+      #      name: orange
+      #      displayName: red
+      #    market:
+      #      name: red
+      #      field: white
+      #      value: green
+      #  enabled: true
+      #  position:
+      #    top: 0
+      #    left: 2 
+      #    height: 3
+      #    width: 1
+      #  refreshInterval: 5
+      #  summary:
+      #    USD:
+      #      displayName: Bitcoin
+      #      market:
+      #      - BTC
+      #      - LTC
+      #      - ETH

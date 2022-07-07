@@ -20,6 +20,7 @@ require "user.alpha"
 require "user.whichkey"
 require "user.autocommands"
 require "user.tmux"
+require "user.endwise"
 -- require "user.tabnine"
 require 'user.fzf'
 require "user.gh"
@@ -31,3 +32,4 @@ vim.cmd 'source ~/.config/nvim/vimscript/close_tag.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/fzf.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/test.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/terminal.vim'
+vim.cmd 'source ~/.config/nvim/vimscript/folding.vim'

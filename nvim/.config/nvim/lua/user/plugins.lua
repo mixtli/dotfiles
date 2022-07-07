@@ -66,6 +66,8 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
+
+  use 'RRethy/nvim-treesitter-endwise'
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
@@ -133,8 +135,13 @@ return packer.startup(function(use)
   use 'jamestthompson3/nvim-remote-containers'
 
 
+  -- Markdown
+  use {"ellisonleao/glow.nvim", branch = 'main'}
+
   -- Language support
   use 'towolf/vim-helm'
+  use 'tpope/vim-rails'
+  use 'tpope/vim-bundler'
 
   -- Debugging
   use 'mfussenegger/nvim-dap'

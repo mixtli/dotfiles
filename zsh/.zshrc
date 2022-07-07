@@ -6,11 +6,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+source $HOME/.zsh.local
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -133,7 +134,14 @@ export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 for file in ~/.zsh/*.zsh; do
     source "$file"
 done
-
-source $HOME/.zsh_secrets
+if test -f "$HOME/.zsh_secrets"; then
+  source $HOME/.zsh_secrets
+fi
 
 export PATH="/usr/local/opt/kubernetes-cli@1.22/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+
+
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+

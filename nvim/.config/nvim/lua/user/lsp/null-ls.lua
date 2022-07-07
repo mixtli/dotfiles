@@ -11,9 +11,27 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+		formatting.prettier.with({
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue",
+        "css",
+        "scss",
+        "less",
+        "html",
+        "yaml",
+        "markdown",
+        "graphql",
+        "solidity"
+      },
+      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" }
+    }),
 		formatting.black.with({ extra_args = { "--fast" } }),
+    formatting.gofmt,
 		formatting.stylua,
-    -- diagnostics.flake8
+    diagnostics.flake8
 	},
 })

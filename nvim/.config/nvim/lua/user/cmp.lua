@@ -15,6 +15,9 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
+local lspkind = require('lspkind')
+
+
 --   פּ ﯟ   some other good icons
 local kind_icons = {
   Text = "",
@@ -44,6 +47,14 @@ local kind_icons = {
   TypeParameter = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
+
+local source_mapping = {
+	buffer = "[Buffer]",
+	nvim_lsp = "[LSP]",
+	nvim_lua = "[Lua]",
+	cmp_tabnine = "[TN]",
+	path = "[Path]",
+}
 
 cmp.setup {
   snippet = {
@@ -95,19 +106,43 @@ cmp.setup {
     }),
   },
   formatting = {
-    fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
-      -- Kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-      vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-      })[entry.source.name]
-      return vim_item
-    end,
+    	format = function(entry, vim_item)
+			vim_item.kind = lspkind.presets.default[vim_item.kind]
+			local menu = source_mapping[entry.source.name]
+			if entry.source.name == 'cmp_tabnine' then
+				if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+					menu = entry.completion_item.data.detail .. ' ' .. menu
+				end
+				vim_item.kind = ''
+			end
+			vim_item.menu = menu
+			return vim_item
+		end
+    
+    -- fields = { "kind", "abbr", "menu" },
+    --  format = lspkind.cmp_format({
+    --   mode = 'symbol', -- show only symbol annotations
+    --   maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+    --
+    --   -- The function below will be called before any actual modifications from lspkind
+    --   -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+    --   before = function (entry, vim_item)
+    --    -- ...
+    --     return vim_item
+    --   end
+    -- })
+    -- format = function(entry, vim_item)
+    --   -- Kind icons
+    --   vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+    --   -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+    --   vim_item.menu = ({
+    --     nvim_lsp = "[LSP]",
+    --     luasnip = "[Snippet]",
+    --     buffer = "[Buffer]",
+    --     path = "[Path]",
+    --   })[entry.source.name]
+    --   return vim_item
+    -- end,
   },
   sources = {
     { name = "nvim_lsp" },

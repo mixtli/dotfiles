@@ -21,7 +21,7 @@ require "user.whichkey"
 require "user.autocommands"
 require "user.tmux"
 require "user.endwise"
--- require "user.tabnine"
+require "user.tabnine"
 require 'user.fzf'
 require "user.gh"
 require "user.dap"

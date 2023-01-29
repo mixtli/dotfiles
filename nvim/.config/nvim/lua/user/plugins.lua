@@ -49,6 +49,11 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+  use 'weirongxu/plantuml-previewer.vim'
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use 'kdheepak/lazygit.nvim'
@@ -133,8 +138,10 @@ return packer.startup(function(use)
   use 'jamestthompson3/nvim-remote-containers'
 
 
+
   -- Language support
   use 'towolf/vim-helm'
+  use 'aklt/plantuml-syntax'
 
   -- Debugging
   use 'mfussenegger/nvim-dap'
@@ -143,6 +150,9 @@ return packer.startup(function(use)
   use 'nvim-telescope/telescope-dap.nvim'
   use 'theHamsta/nvim-dap-virtual-text'
   use 'mfussenegger/nvim-dap-python'
+
+
+  use 'tyru/open-browser.vim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

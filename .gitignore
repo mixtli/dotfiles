@@ -3,3 +3,4 @@ nvim/.config/nvim/autoload/plugged/*
 mutt/.mutt
 __pycache__
 .DS_Store
+zsh/.zsh/appen.zsh

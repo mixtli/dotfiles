@@ -20,13 +20,14 @@ require "user.alpha"
 require "user.whichkey"
 require "user.autocommands"
 require "user.tmux"
--- require "user.tabnine"
 require 'user.fzf'
 require "user.gh"
 require "user.dap"
 require "user.ruby-dap"
 require "user.auto-session"
 require "user.mason"
+
+-- require "user.tabnine"
 
 vim.cmd 'source ~/.config/nvim/lua/user/vimade.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/close_tag.vim'
@@ -35,6 +36,7 @@ vim.cmd 'source ~/.config/nvim/vimscript/test.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/terminal.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/quickfix.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/neovim_remote.vim'
+vim.cmd 'source ~/.config/nvim/vimscript/dim.vim'
 
 
 -- Learn the keybindings, see :help lsp-zero-keybindings

@@ -1,0 +1,8 @@
+Jira,jiraterm
+Docker,lazydocker
+Kubernetes,k9s
+Top,htop
+Git,lazygit
+Slack,slack-term -config ~/.config/slack-term/config
+Spotify,spt
+Ranger,ranger

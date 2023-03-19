@@ -81,7 +81,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git vi-mode z zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
-plugins=(git z vi-mode zsh-syntax-highlighting)
+plugins=(git z vi-mode zsh-syntax-highlighting kube-ps1)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -137,3 +137,24 @@ done
 source $HOME/.zsh_secrets
 
 export PATH="/usr/local/opt/kubernetes-cli@1.22/bin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--extended"
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
+
+
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1
+
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+    alias nvim=nvr -cc split --remote-wait +'set bufhidden=wipe'
+fi
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+    export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+    export EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+else
+    export VISUAL="nvim"
+    export EDITOR="nvim"
+fi

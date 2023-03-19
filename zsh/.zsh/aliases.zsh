@@ -9,3 +9,9 @@ alias gpu='[[ -z $(git config "branch.$(git symbolic-ref --short HEAD).merge") ]
 
 alias slack="slack-term -config ~/.config/slack-term/config"
 alias k="kubectl"
+
+
+
+
+# GH
+alias gprs=gh search prs --state=open --review-requested=@me

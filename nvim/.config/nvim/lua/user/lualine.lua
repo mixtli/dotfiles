@@ -70,16 +70,36 @@ lualine.setup({
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
+    globalstatus = true
 	},
 	sections = {
 		lualine_a = { branch, diagnostics },
-		lualine_b = { mode },
-		lualine_c = {"filename"},
+		--lualine_b = { mode },
+    lualine_b = {require('auto-session-library').current_session_name},
+		lualine_c = {},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},
+
+  winbar = {
+  lualine_a = {},
+  lualine_b = {},
+  lualine_c = {{'filename', color = { fg = '#55aa88', bg = 'lightgrey', gui='italic,bold' }}},
+  lualine_x = {},
+  lualine_y = {},
+  lualine_z = {}
+},
+
+inactive_winbar = {
+  lualine_a = {},
+  lualine_b = {},
+  lualine_c = {{'filename', color = { fg = '#ffaa88', bg = 'grey', gui='italic,bold' }}},
+  lualine_x = {},
+  lualine_y = {},
+  lualine_z = {}
+},
 	inactive_sections = {
 		lualine_a = {},
 		lualine_b = {},

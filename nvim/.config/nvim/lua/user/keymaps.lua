@@ -131,3 +131,7 @@ end)
 -- you should use the wincmd command "<C-w>w"
 keymap("n", "K", "<cmd>Lspsaga hover_doc ++keep<CR>")
 
+keymap("n", ">>", ":diffget //2<cr>")
+keymap("n", "<<", ":diffget //3<cr>")
+
+

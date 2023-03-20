@@ -72,6 +72,19 @@ local opts = {
   noremap = true, -- use `noremap` when creating keymaps
   nowait = true, -- use `nowait` when creating keymaps
 }
+local g_opts = {
+  mode = "n", -- NORMAL mode
+  prefix = "g",
+}
+local g_mappings = {
+  d = { "Goto definition"},
+  D = { "Peek definition"},
+  h = { "Find Symbol"},
+  r = { "Rename" },
+  R = { "Rename in project" },
+  t = { "Goto type definition" },
+  T = { "Peek type definition" },
+}
 
 local mappings = {
   a = { "<cmd>Alpha<cr>", "Alpha" },
@@ -80,7 +93,10 @@ local mappings = {
     l = {"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Switch Buffer"},
     d = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   },
-  B = { "<cmd>:Telescope file_browser<cr>", "Browse Files", },
+  c = {
+    name = "Copilot",
+    p = { "<cmd>:Copilot panel<cr>", "Toggle Panel"}
+  },
   d = {
     name = "Debug",
     t = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI"},
@@ -99,8 +115,12 @@ local mappings = {
   },
   D = {
     name = "Devspace",
-    d = { ":VtrSendCommandToRunner! devspace dev<cr>", "dev"},
-    t = { ":VtrSendCommandToRunner! devspace dev -p test<cr>", "test"}
+    b = { "<cmd>lua _TOGGLE_DEVSPACE_BUILD()<CR>", "devspace build"},
+    d = { "<cmd>lua _TOGGLE_DEVSPACE_DEV()<CR>", "devspace dev"},
+    D = { "<cmd>lua _TOGGLE_DEVSPACE_DEPLOY()<CR>", "devspace deploy"},
+    e = { "<cmd>lua _TOGGLE_DEVSPACE_ENTER()<CR>", "devspace enter"},
+    l = { "<cmd>lua _TOGGLE_DEVSPACE_DEPLOY_LOCAL()<CR>", "devspace deploy --local"},
+    t = { "<cmd>lua _TOGGLE_DEVSPACE_TESTS()<CR>", "devspace run tests"},
   },
   e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown())<cr>", "Find files", },
@@ -169,16 +189,6 @@ local mappings = {
     d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff", },
   },
 
-  h = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
-  },
-
   P = { "<cmd>Telescope projects<cr>", "Projects" },
   l = {
     name = "LSP",
@@ -190,20 +200,21 @@ local mappings = {
     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
     I = { "<cmd>LspInfo<cr>", "Info" },
     i = { "<cmd>Lspsaga incoming_calls<cr>", "Incoming Calls" },
-    o = { "<cmd>Lspsaga outgoing_calls<cr>", "Incoming Calls" },
+    o = { "<cmd>Lspsaga outgoing_calls<cr>", "Outgoing Calls" },
     j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next Diagnostic", },
     k = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic", },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols", t = {"<cmd>Lspsaga term_toggle<CR>", "Terminal Toggle"},
+    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols", 
+    t = {"<cmd>Lspsaga term_toggle<CR>", "Terminal Toggle"},
     z = {"<cmd>Lspsaga outline<CR>", "Outline"}
     },
   },
   N = { 
     name = "Neovim",
-    b = { "<cmd>:source $MYVIMRC<cr>", "Reload config" },
+    r = { "<cmd>:source $MYVIMRC<cr>", "Reload config" },
   },
   r = { "<cmd>:RnvimrToggle<cr>", "Ranger"},
   R = { "<cmd>Run<cr>", "Run"},
@@ -242,10 +253,12 @@ local mappings = {
 
 return {
   "folke/which-key.nvim",
+  dependencies = {{ 'glepnir/lspsaga.nvim' }},
   config = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 300
     require('which-key').setup(setup)
     require('which-key').register(mappings, opts)
+    require('which-key').register(g_mappings, g_opts)
   end
 }

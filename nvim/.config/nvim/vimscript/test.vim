@@ -1,4 +1,4 @@
-let test#strategy = "vtr"
+" let test#strategy = "vtr"
 
 nmap <silent> t<C-n> :TestNearest<CR>
 nmap <silent> t<C-f> :TestFile<CR>

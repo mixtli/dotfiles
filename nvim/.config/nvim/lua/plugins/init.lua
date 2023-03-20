@@ -3,22 +3,13 @@ return {
   "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
   "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
   'tpope/vim-surround',
-
-  --[[ {
-    "zbirenbaum/copilot-cmp",
-    dependencies = { "copilot.lua" },
-    config = function ()
-      require("copilot_cmp").setup()
-    end
-  },
-]]
   "nvim-tree/nvim-web-devicons",
-  "nvim-tree/nvim-tree.lua",
   'weirongxu/plantuml-previewer.vim',
   "moll/vim-bbye",
   'kdheepak/lazygit.nvim',
   "lukas-reineke/indent-blankline.nvim",
   "antoinemadec/FixCursorHold.nvim", -- This is needed to fix lsp doc highlight
+  "tpope/vim-unimpaired",
 
   -- Colorschemes
   "lunarvim/colorschemes", -- A bunch of colorschemes you can try out
@@ -36,17 +27,7 @@ return {
   -- snippets
   "L3MON4D3/LuaSnip", --snippet engine
   "rafamadriz/friendly-snippets", -- a bunch of snippets to use
-
-
-
-  -- "natecraddock/workspaces.nvim",
-  -- "natecraddock/sessions.nvim",
-
---  "neovim/nvim-lspconfig", -- enable LSP
---  "williamboman/nvim-lsp-installer", -- simple to use language server installer
---  "tamago324/nlsp-settings.nvim", -- language server settings defined in json for
   "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
-
 
   -- Testing 
   'vim-test/vim-test',
@@ -59,26 +40,16 @@ return {
   'christoomey/vim-tmux-navigator',
   'christoomey/vim-tmux-runner',
   'sbdchd/vim-run',
-
   'kevinhwang91/rnvimr',
 
   -- Git
   "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
 
-  -- Dims inactive panes
-  -- 'TaDaa/vimade',
-
   -- Solidity support.  Once LSP is better, maybe remove this
   'thesis/vim-solidity',
 
   'alvan/vim-closetag',
-  -- 'rizzatti/dash.vim',
-
-  -- {
-  --   'mrjones2014/dash.nvim',
-  --   build = 'make install',
-  -- },
 
   -- Devcontainers
   'jamestthompson3/nvim-remote-containers',

@@ -17,7 +17,7 @@ end
 
 
 return {
-  "nvim-lualine/lualine.nvim",
+  "nvim-tree/nvim-tree.lua",
   config = function()
     local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
     if not config_status_ok then
@@ -26,7 +26,7 @@ return {
 
     local tree_cb = nvim_tree_config.nvim_tree_callback
     vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
-    require('lualine').setup({
+    require('nvim-tree').setup({
       disable_netrw = false,
       hijack_netrw = true,
       hijack_cursor = false,

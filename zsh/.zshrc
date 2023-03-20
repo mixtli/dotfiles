@@ -117,6 +117,7 @@ export EDITOR='nvim'
 
 export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

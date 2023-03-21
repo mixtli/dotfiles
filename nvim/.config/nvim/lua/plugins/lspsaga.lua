@@ -1,3 +1,12 @@
+
+return {
+  "glepnir/lspsaga.nvim",
+ -- event = "BufRead",
+  ft = {'ruby', 'python', 'lua'},
+  --cond = false,
+
+  config = function()
+    require("lspsaga").setup({})
 -- Most of the keymaps are defined in which-key prefixed by <Leader>-l
 -- The ones here are the ones that don't go in leader.. mostly prefixed by g for quick access
 local keymap = vim.keymap.set
@@ -74,12 +83,6 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
 -- Floating terminal
 -- keymap({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
-
-return {
-  "glepnir/lspsaga.nvim",
-  event = "BufRead",
-  config = function()
-    require("lspsaga").setup({})
   end,
   dependencies = {
     {"nvim-tree/nvim-web-devicons"},

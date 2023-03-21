@@ -10,10 +10,11 @@ return {
   "lukas-reineke/indent-blankline.nvim",
   "antoinemadec/FixCursorHold.nvim", -- This is needed to fix lsp doc highlight
   "tpope/vim-unimpaired",
+  'ludovicchabant/vim-gutentags',
 
   -- Colorschemes
-  "lunarvim/colorschemes", -- A bunch of colorschemes you can try out
   "lunarvim/darkplus.nvim",
+  "navarasu/onedark.nvim",
   "morhetz/gruvbox",
 
   -- cmp plugins

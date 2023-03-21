@@ -138,12 +138,11 @@ done
 source $HOME/.zsh_secrets
 
 export PATH="/usr/local/opt/kubernetes-cli@1.22/bin:$PATH"
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--extended"
-export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
-export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
+export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
+export CPPFLAGS="-I/usr/local/opt/openjdk@17/include"
 
 
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
@@ -159,3 +158,5 @@ else
     export VISUAL="nvim"
     export EDITOR="nvim"
 fi
+
+export JAVA_HOME=/usr/local/opt/openjdk@17

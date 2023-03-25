@@ -97,6 +97,22 @@ local mappings = {
     name = "Copilot",
     p = { "<cmd>:Copilot panel<cr>", "Toggle Panel"}
   },
+  C = {
+    name = "Copilot",
+    a = { "<cmd>lua require('copilot.panel').accept()<cr>", "Accept" },
+    n = { "<cmd>lua require('copilot.panel').jump_next()<cr>", "Next" },
+    p = { "<cmd>lua require('copilot.panel').jump_prev()<cr>", "Prev" },
+    o = { "<cmd>lua require('copilot.panel').open()<cr>", "Open" },
+    r = { "<cmd>lua require('copilot.panel').refresh()<cr>", "Refresh" },
+    v = { "<cmd>lua require('copilot.suggestion').is_visible()<cr>", "Visible" },
+    A = { "<cmd>lua require('copilot.suggestion').accept()<cr>", "Accept" },
+    W = { "<cmd>lua require('copilot.suggestion').accept_word()<cr>", "Accept word" },
+    L = { "<cmd>lua require('copilot.suggestion').accept_line()<cr>", "Accept line" },
+    N = { "<cmd>lua require('copilot.suggestion').next()<cr>", "Suggest Next" },
+    P = { "<cmd>lua require('copilot.suggestion').prev()<cr>", "Sugest Prev" },
+    D = { "<cmd>lua require('copilot.suggestion').dismiss()<cr>", "Dismiss" },
+    T = { "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<cr>", "Toggle auto trigger" },
+  },
   d = {
     name = "Debug",
     t = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI"},
@@ -190,6 +206,7 @@ local mappings = {
     m = { "<cmd>Git mergetool<cr>", "Git mergetool"},
     M = { "<cmd>Gvdiffsplit!<cr>", "3 Way Merge"},
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+    p = { "<cmd>Git pull<cr>", "Git pull" },
     P = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
     R = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
     S = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
@@ -198,8 +215,7 @@ local mappings = {
     w = { "<cmd>GBrowse<cr>", "Browse in Web"},
     X = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
   },
-
-  P = { "<cmd>Telescope projects<cr>", "Projects" },
+  -- P = { "<cmd>Telescope projects<cr>", "Projects" },
   l = {
     name = "LSP",
     a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
@@ -224,7 +240,6 @@ local mappings = {
     },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
-    t = { "<cmd>Lspsaga term_toggle<CR>", "Terminal Toggle"},
     z = { "<cmd>Lspsaga outline<CR>", "Outline"}
   },
   N = {
@@ -239,9 +254,9 @@ local mappings = {
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     s = { "<cmd>Telescope grep_string<cr>", "Grep String Under cursor" },
-    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
+    m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+    o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+    r = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
   },

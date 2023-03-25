@@ -16,6 +16,7 @@ local function open_nvim_tree(data)
 end
 
 
+
 return {
   "nvim-tree/nvim-tree.lua",
   config = function()
@@ -32,6 +33,7 @@ return {
       hijack_cursor = false,
       update_cwd = true,
       renderer = {
+        group_empty = true,
         icons = {
           show = {
             git = true,
@@ -85,9 +87,9 @@ return {
         custom = {},
       },
       git = {
-        enable = true,
+        enable = false,
         ignore = true,
-        timeout = 500,
+        timeout = 1000,
       },
       view = {
         width = 30,

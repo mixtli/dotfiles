@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 languages=$(echo "ruby python golang c typescript nodejs lua" | tr ' ' '\n')
-coreutils=$(echo "find sed ps awk xargs curl" | tr ' ' '\n')
+coreutils=$(echo "find git sed ps awk xargs curl" | tr ' ' '\n')
 
 read -p "Enter Query: " query
 

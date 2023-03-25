@@ -14,7 +14,7 @@ vim.cmd 'source ~/.config/nvim/vimscript/test.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/terminal.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/quickfix.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/neovim_remote.vim'
-vim.cmd 'source ~/.config/nvim/vimscript/dim.vim'
+-- vim.cmd 'source ~/.config/nvim/vimscript/dim.vim'
 
 
 -- Learn the keybindings, see :help lsp-zero-keybindings

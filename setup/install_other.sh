@@ -10,3 +10,7 @@ pip install neovim-remote
 # install fonts
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
+
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+

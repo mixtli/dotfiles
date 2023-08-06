@@ -3,6 +3,7 @@ brew install lsd
 brew install zsh-syntax-highlighting
 brew install zsh-fzf-history-search
 brew install zsh-autosuggestions
+<<<<<<< Updated upstream
 
 brew install xsel
 brew install --cask flycut
@@ -17,3 +18,5 @@ brew tap ankitpokhrel/jira-cli
 brew install jira-cli
 
 brew install kube-ps1
+brew install rbenv
+brew install zsh-syntax-highlighting

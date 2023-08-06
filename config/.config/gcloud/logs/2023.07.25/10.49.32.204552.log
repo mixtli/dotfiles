@@ -1,0 +1,17 @@
+2023-07-25 10:49:32,205 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
+2023-07-25 10:49:32,209 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'describe']
+2023-07-25 10:49:32,210 DEBUG    root            Running [gcloud.projects.describe] with arguments: [--account: "ron.mcclain@figure-eight.com", --configuration: "default", --format: "value(name)", PROJECT_ID_OR_NUMBER: "devspace-256022"]
+2023-07-25 10:49:32,236 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2023-07-25 10:49:32,246 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2023-07-25 10:49:32,489 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2023-07-25 10:49:32,524 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2023-07-25 10:49:32,844 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects/devspace-256022?alt=json HTTP/1.1" 200 None
+2023-07-25 10:49:32,850 DEBUG    root            Chosen display Format:default value(name)
+2023-07-25 10:49:32,851 INFO     root            Display format: "default value(name)"
+2023-07-25 10:49:32,851 INFO     ___FILE_ONLY___ Appen AI Demo App
+
+2023-07-25 10:49:32,858 DEBUG    root            Checking for updates...
+2023-07-25 10:49:32,862 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2023-07-25 10:49:33,018 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components-2.json HTTP/1.1" 200 208282
+2023-07-25 10:49:33,127 DEBUG    root            Updating notification cache...
+2023-07-25 10:49:33,127 DEBUG    root            Activating notification: [default]

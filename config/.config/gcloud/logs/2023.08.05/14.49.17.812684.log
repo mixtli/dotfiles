@@ -1,0 +1,9 @@
+2023-08-05 14:49:17,813 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
+2023-08-05 14:49:17,816 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'describe']
+2023-08-05 14:49:17,816 DEBUG    root            Running [gcloud.projects.describe] with arguments: [--account: "ron.mcclain@figure-eight.com", --configuration: "default", --format: "value(name)", PROJECT_ID_OR_NUMBER: "devspace-256022"]
+2023-08-05 14:49:17,832 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2023-08-05 14:49:18,167 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects/devspace-256022?alt=json HTTP/1.1" 200 None
+2023-08-05 14:49:18,170 DEBUG    root            Chosen display Format:default value(name)
+2023-08-05 14:49:18,171 INFO     root            Display format: "default value(name)"
+2023-08-05 14:49:18,171 INFO     ___FILE_ONLY___ Appen AI Demo App
+

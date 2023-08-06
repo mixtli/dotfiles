@@ -1,0 +1,12 @@
+2023-07-19 19:51:58,084 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
+2023-07-19 19:51:58,086 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'describe']
+2023-07-19 19:51:58,087 DEBUG    root            Running [gcloud.projects.describe] with arguments: [--account: "ron.mcclain@figure-eight.com", --configuration: "default", --format: "value(name)", PROJECT_ID_OR_NUMBER: "devspace-256022"]
+2023-07-19 19:51:58,104 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2023-07-19 19:51:58,114 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2023-07-19 19:51:58,554 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2023-07-19 19:51:58,583 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2023-07-19 19:51:59,067 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects/devspace-256022?alt=json HTTP/1.1" 200 None
+2023-07-19 19:51:59,074 DEBUG    root            Chosen display Format:default value(name)
+2023-07-19 19:51:59,075 INFO     root            Display format: "default value(name)"
+2023-07-19 19:51:59,076 INFO     ___FILE_ONLY___ Appen AI Demo App
+

@@ -1,4 +1,0 @@
-2023-08-05 14:53:14,636 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
-2023-08-05 14:53:14,638 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'describe']
-2023-08-05 14:53:14,639 DEBUG    root            Running [gcloud.projects.describe] with arguments: [--account: "ron.mcclain@figure-eight.com", --configuration: "default", --format: "value(name)", PROJECT_ID_OR_NUMBER: "devspace-256022"]
-2023-08-05 14:53:14,653 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443

@@ -1,3 +1,0 @@
-2023-07-18 15:44:03,792 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
-2023-07-18 15:44:03,797 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'describe']
-2023-07-18 15:44:03,798 DEBUG    root            Running [gcloud.projects.describe] with arguments: [--account: "ron.mcclain@figure-eight.com", --configuration: "default", --format: "value(name)", PROJECT_ID_OR_NUMBER: "devspace-256022"]

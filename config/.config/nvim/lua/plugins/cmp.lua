@@ -11,6 +11,7 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
+
 local check_backspace = function()
   local col = vim.fn.col "." - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
@@ -48,6 +49,7 @@ local kind_icons = {
 
 return {
   "hrsh7th/nvim-cmp", -- The completion plugin
+  dependencies = { 'hrsh7th/cmp-nvim-lua', 'ray-x/cmp-treesitter' },
   config = {
     snippet = {
       expand = function(args)
@@ -118,6 +120,7 @@ return {
       { name = "nvim_lsp" },
       { name = "luasnip" },
   --  { name = "cmp_tabnine" },
+      { name = "treesitter" },
       { name = "buffer" },
       { name = "path" },
     },

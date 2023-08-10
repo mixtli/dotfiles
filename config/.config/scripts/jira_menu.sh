@@ -3,7 +3,7 @@
 #exec &> >(tee -a /tmp/tmux.log)
 #exec 2>&1
 
-FILE="$(cat ~/.config/.jira/tmux.txt | tr '|' '\t')"
+FILE="$(cat ~/.config/jira/tmux.txt | tr '|' '\t')"
 COMMAND_LINE=$(echo "$FILE" |fzf --with-nth=1 -d'\t')
 WINDOW=$(echo "$COMMAND_LINE" | cut -d$'\t' -f1)
 COMMAND=$(echo "$COMMAND_LINE" | cut -d$'\t' -f2)

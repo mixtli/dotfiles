@@ -11,9 +11,9 @@ local setup = {
     -- the presets plugin, adds help for a bunch of default keybindings in Neovim
     -- No actual key bindings are created
     presets = {
-      operators = false,    -- adds help for operators like d, y, ... and registers them for motion / text object completion
-      motions = false,      -- adds help for motions
-      text_objects = false, -- help for text objects triggered after entering an operator
+      operators = true,    -- adds help for operators like d, y, ... and registers them for motion / text object completion
+      motions = true,      -- adds help for motions
+      text_objects = true, -- help for text objects triggered after entering an operator
       windows = true,       -- default bindings on <c-w>
       nav = true,           -- misc bindings to work with windows
       z = true,             -- bindings for folds, spelling and others prefixed with z
@@ -215,7 +215,7 @@ local mappings = {
         c = { "<cmd>GHCreateThread<cr>", "Create" },
         n = { "<cmd>GHNextThread<cr>", "Next" },
         t = { "<cmd>GHToggleThread<cr>", "Toggle" },
-      },
+      }
     },
     J = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     K = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -230,8 +230,12 @@ local mappings = {
     S = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
     s = { "<cmd>Git<cr>", "Git Status" },
     U = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
+    v = { "<cmd>DiffviewOpen<cr>", "DiffviewOpen" },
+    V = { "<cmd>DiffviewClose<cr>", "DiffviewClose" },
     w = { "<cmd>GBrowse<cr>", "Browse in Web" },
     X = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+    [">"] = { "<cmd>diffget REMOTE<cr>", "Use Remote"},
+    ["<"] = { "<cmd>diffget LOCAL<cr>", "Use Local" }
   },
   -- P = { "<cmd>Telescope projects<cr>", "Projects" },
   l = {
@@ -330,12 +334,12 @@ local mappings = {
   },
   u = {
     name = "Trouble",
-    x = { require("trouble").open(), "Open" },
-    w = { require("trouble").open("workspace_diagnostics"), "Workspace Diagnostics" },
-    d = { require("trouble").open("document_diagnostics"), "Document Diagnostics" },
-    q = { require("trouble").open("quickfix"), "Quickfix" },
-    l = { require("trouble").open("loclist"), "Loclist" },
-    R = { require("trouble").open("lsp_references"), "LSP References" },
+    x = { function() require("trouble").open() end, "Open" },
+    w = { function() require("trouble").open("workspace_diagnostics") end, "Workspace Diagnostics" },
+    d = { function() require("trouble").open("document_diagnostics") end, "Document Diagnostics" },
+    q = { function() require("trouble").open("quickfix") end, "Quickfix" },
+    l = { function() require("trouble").open("loclist") end, "Loclist" },
+    R = { function() require("trouble").open("lsp_references") end, "LSP References" },
     t = { "<cmd>TroubleToggle<cr>", "Toggle"}
   },
   w = { "<cmd>:Telescope session-lens search_session<cr>", "Switch Workspace" },

@@ -1,8 +1,9 @@
-Jira,jiraterm
+Jira,~/.config/scripts/jira_menu.sh
 Docker,lazydocker
 Kubernetes,k9s
 Top,htop
-Git,lazygit
+LazyGit,lazygit
+PR,gh dash
 Slack,slack-term -config ~/.config/slack-term/config
 Spotify,spt
 Ranger,ranger

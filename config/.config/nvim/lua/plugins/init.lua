@@ -11,12 +11,11 @@ return {
   "antoinemadec/FixCursorHold.nvim", -- This is needed to fix lsp doc highlight
   "tpope/vim-unimpaired",
   'ludovicchabant/vim-gutentags',
-
+  'sindrets/diffview.nvim',
   -- Colorschemes
   "lunarvim/darkplus.nvim",
   "navarasu/onedark.nvim",
   "morhetz/gruvbox",
-
   -- cmp plugins
   "hrsh7th/nvim-cmp", -- The completion plugin
   "hrsh7th/cmp-buffer", -- buffer completions
@@ -37,7 +36,7 @@ return {
   "JoosepAlviste/nvim-ts-context-commentstring",
 -- { "aserowy/tmux.nvim", branch='main'},
 
-  'tpope/vim-commentary',
+  -- 'tpope/vim-commentary',
 
   'christoomey/vim-tmux-navigator',
   'christoomey/vim-tmux-runner',

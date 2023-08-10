@@ -1,6 +1,7 @@
 return {
   'ldelossa/gh.nvim',
   dependencies = { { 'ldelossa/litee.nvim',  'ibhagwan/fzf-lua' } },
+  enabled =  false,
   config = function()
     require('litee.lib').setup()
     require('litee.gh').setup({

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+declare -a arr=("ec2-54-165-34-242.compute-1.amazonaws.com" "ec2-52-202-201-50.compute-1.amazonaws.com" "ec2-52-90-230-155.compute-1.amazonaws.com" "ec2-34-201-98-213.compute-1.amazonaws.com")
+
+service=shift
+container=""
+for host in "${arr[@]}"
+do
+  line=$(docker --tlsverify -H $host:2376 ps | grep $service)
+  result=$?
+
+  if [ $result -eq 0 ]; then
+	  container=$(echo $line| cut -d ' ' -f1)
+	  break
+  fi
+done
+
+docker --tlsverify -H $host:2376 
+echo $host
+echo $found

@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+
+import sys, getopt, subprocess, os
+me = subprocess.check_output(['jira', 'me']).decode().strip()
+
+queries = {
+    "open": f'-s~Done -a="{me}"'
+}
+
+options, remainder = getopt.getopt(sys.argv[1:],"p:q:",["project=", "query="])
+
+
+query = ''
+project = 'ADAP'
+for opt, arg in options:
+    if opt in ('-q', '--query'):
+        query = queries[arg]
+    if opt in ('-p', '--project'):
+        project = arg
+
+
+cmd = f"jira issues list -p {project} {query} --columns key,assignee,status,summary"
+
+os.system(cmd)
+
+

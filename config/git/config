@@ -10,7 +10,7 @@
 [core]
 	editor = nvim
   pager = delta
-	excludesfile = ~/.config/gitignore
+	excludesfile = ~/.config/git/gitignore
 
 [push]
   autoSetupRemote = true
@@ -59,7 +59,6 @@
 [commit]
 	template = ~/.config/git/commit_template
 	verbose = true
-	gpgSign = true
 
 
 [credential]

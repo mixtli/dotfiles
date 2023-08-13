@@ -27,7 +27,7 @@ k9s:
         - adap-app
         - default
       view:
-        active: context
+        active: pod
       featureGates:
         nodeShell: false
       shellPod:

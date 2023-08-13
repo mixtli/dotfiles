@@ -13,3 +13,7 @@ tags
 config/.config/local
 config/.config/zsh/.zcompdump*
 config/.config/cache
+
+cache
+config/local/share
+config/tmux/plugins

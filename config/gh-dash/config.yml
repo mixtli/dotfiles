@@ -51,7 +51,7 @@ keybindings:
   prs:
     - key: C
       command: >
-        tmux new-window -t 0: -n {{ .PrNumber }} -c {{ .RepoPath }} '
+        tmux new-window -t 0: -c {{ .RepoPath }} '
           gh pr checkout {{ .PrNumber }} &&
           nvim -c ":Octo pr edit {{ .PrNumber }}"
         '

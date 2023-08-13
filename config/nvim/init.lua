@@ -27,3 +27,5 @@ lsp.preset('recommended')
 lsp.nvim_workspace()
 
 lsp.setup()
+
+require('keyseer').setup()

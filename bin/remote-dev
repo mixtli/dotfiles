@@ -1,0 +1,642 @@
+#!/usr/bin/env bash
+# License: Proprietary
+# Copyright (c) 2018, Figure Eight Technologies, Inc.
+# All rights reserved - Do Not Redistribute
+
+# Source code located at https://github.com/CrowdFlower/remote-development
+set -e
+
+private_docker_build() {
+  local makeTarget="remote_dev_docker_build"
+  local repoNameLowercase="$(string_toLower ${PWD##*/})"
+  if make_target_exists "$makeTarget"; then
+    make "$makeTarget"
+  else
+    trap 'echo "Built-in docker build command failed. Please implement the make target: $makeTarget, which should build an image named $repoNameLowercase:remote-dev for Telepresence to use"' ERR
+    docker build -t "$repoNameLowercase:remote-dev" -f Dockerfile .
+  fi
+}
+
+private_telepresence_connect() {
+  local makeTarget="remote_dev_telepresence"
+  if make_target_exists "$makeTarget"; then
+    make "$makeTarget"
+  else
+    local repoNameLowercase="$(string_toLower ${PWD##*/})"
+    trap 'echo "Built-in telepresence command failed. Please implement the make target: $makeTarget, which should implement the Telepresence command. See https://telepresence.io for more info"' ERR
+    case "$repoNameLowercase" in
+      akon)
+        telepresence --swap-deployment akon-web --expose 3000:80 \
+          --docker-run --rm -it -e RAILS_ENV=sandbox -e PUMA_WORKERS=1 -v "$(pwd)":/app "$repoNameLowercase":remote-dev \
+            bundle exec dotenv puma -C config/puma.rb -S puma.state;;
+      channelsservice)
+        telepresence --swap-deployment channels-web \
+          --docker-run --rm -it -e RAILS_ENV=sandbox -p 3000 --entrypoint='' -v "$(pwd)":/app "$repoNameLowercase":remote-dev \
+            bundle exec dotenv puma -C config/puma.rb -S puma.state;;
+      clientactionsauditservice)
+        telepresence --swap-deployment caas-web \
+          --docker-run --rm -it -e RAILS_ENV=development -p 3000 --entrypoint='' -v "$(pwd)":/app "$repoNameLowercase":remote-dev \
+            bundle exec dotenv puma -C config/puma.rb -S puma.state;;
+      contributorprofilesservice)
+        telepresence --swap-deployment contributor-profiles-web --expose 3000:80 \
+          --docker-run --rm -it -e RAILS_ENV=development --entrypoint='' -v "$(pwd)":/app "$repoNameLowercase":remote-dev \
+            bundle exec rails s;;
+      requestor-proxy)
+        telepresence --swap-deployment requestor-proxy-web --expose 80 \
+          --docker-run --rm -it -v "$(pwd)":/usr/src/app "$repoNameLowercase":remote-dev \
+            yarn start;;
+      tagsservice)
+        telepresence --swap-deployment tags-web \
+          --docker-run --rm -it -e RAILS_ENV=development --entrypoint='' -v "$(pwd)":/app "$repoNameLowercase":remote-dev \
+            bundle exec rails s;;
+      web)
+        telepresence --swap-deployment web-service --expose 80 \
+          --docker-run --rm -it -v "$(pwd)":/app -v /app/node_modules "$repoNameLowercase":remote-dev \
+            yarn start;;
+      workflows-api)
+        telepresence --swap-deployment workflows-api \
+          --docker-run --rm -it -p 3000 "$repoNameLowercase":remote-dev \
+            export JDBC_DATABASE_URL=jdbc:\$JDBC_DRIVER://\$JDBC_HOST:\$JDBC_PORT/\$JDBC_DATABASE_NAME; \
+            java -jar -Dspring.profiles.active=\$ENVIRONMENT /app/workflows-api.jar;;
+      workflows-data-router)
+        telepresence --swap-deployment workflows-data-router \
+          --docker-run --rm -it "$repoNameLowercase":remote-dev \
+            java -jar -Dspring.profiles.active=\$ENVIRONMENT /app/workflows-data-router.jar;;
+      *) echo "Telepresence command for $repoNameLowercase has not yet been implemented."; echo "Please implement the make target: $makeTarget, which should implement the Telepresence command. See https://telepresence.io for more info";;
+    esac
+  fi
+}
+
+######################################
+# remote-dev helpers                 #
+######################################
+ 
+help() {
+cat << EOF
+Usage:
+  remote-dev [option] [parameter]
+
+Available options and their parameter(s):
+  kubectl-sh <envName>    - Starts an interactive terminal with kubectl pointing to the development 
+                            environment
+  list                    - Lists the name of running environments
+  setup                   - Installs and sets up prerequisites
+  sh                      - Starts an interactive terminal with a ssh session to the control plane 
+                            of the Kubernetes cluster
+  start <envName>         - Must be run at the root of a project repo. Builds a Docker image and 
+                            replaces the service in the specified development environment with 
+                            Telepresence. If the repo has make targets "remote_dev_docker_build" or 
+                            "remote_dev_telepresence", these will be used instead of the built-in 
+                            commands.
+  uninstall               - Uninstalls this CLI
+  upgrade                 - Upgrades this CLI to the latest version
+  version                 - Prints the CLI version
+EOF
+}
+
+setup() {
+  # Installs prerequisites and prompts aws cli configuration
+  set +e; install_prerequisites; set -e;
+  local awsAccessKey="$(cat ~/.aws/credentials | grep -m 1 aws_access_key_id | awk '{print $NF}')"
+  read -p "Enter your aws_access_key_id [******${awsAccessKey: -4}]: " awsAccessKeyInput
+  if ! string_isEmpty "$awsAccessKeyInput"; then
+    aws configure set aws_access_key_id "$awsAccessKeyInput"
+  else
+    aws configure set aws_access_key_id "$awsAccessKey"
+  fi
+
+  local awsSecretKey="$(cat ~/.aws/credentials | grep -m 1 aws_secret_access_key | awk '{print $NF}')"
+  read -p "Enter your aws_secret_access_key [******${awsSecretKey: -4}]: " awsSecretKeyInput
+  if ! string_isEmpty "$awsSecretKeyInput"; then
+    aws configure set aws_secret_access_key "$awsSecretKeyInput"
+  else
+    aws configure set aws_secret_access_key "$awsSecretKey"
+  fi
+  aws configure set region "us-east-1"
+  install_itself
+}
+
+upgrade() {
+  # This function may take a bit of explaining. It:
+  # 1. Creates a bash script, tempScript, that has code to replace this calling script with updated content, and then deletes itself
+  # 2. Executes tempScrip in a new process
+  # This is because a large bash script cannot overwrite itself without some odd side effects
+  read -p "Do you want to upgrade this CLI to the latest version (yes to continue)? : " confirmation
+  if [[ "$confirmation" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    if envVar_notExported BUNDLE_GITHUB__COM; then
+      read -p "Enter your BUNDLE_GITHUB__COM: " BUNDLE_GITHUB__COM
+    fi
+    export BUNDLE_GITHUB__COM
+    local dirOfRemoteDevScript="$(cd "$(dirname "$0")" && pwd)"
+    local remoteDevScriptPath="$dirOfRemoteDevScript/$(basename "$0")"
+    local tempScriptName="$(uuidgen).sh"
+    cat >"$tempScriptName" <<EOL
+curl https://\$BUNDLE_GITHUB__COM@raw.githubusercontent.com/CrowdFlower/remote-development/master/remote-dev > "$remoteDevScriptPath"    
+rm "$tempScriptName"
+EOL
+    chmod +x "$tempScriptName"
+    exec "./$tempScriptName"
+  fi
+}
+
+uninstall() {
+  read -p "Do you want to uninstall this CLI (yes to continue)? : " confirmation
+  if [[ "$confirmation" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    local thisScriptPath="$(cd "$(dirname "$0")"; pwd -P)/remote-dev" # TODO: make this better
+    rm "$thisScriptPath"
+  fi
+}
+
+make_target_exists() { local makeTarget=$1
+  make -n $makeTarget &> /dev/null
+}
+
+install_itself() {
+  local defaultInstallDir="$HOME/bin"
+  local installDir
+  read -p "Specify install directory [$defaultInstallDir]: " installDir
+  installDir="${installDir:-$defaultInstallDir}"
+  mkdir -p "$installDir"
+  mv "$0" "$installDir"
+  local commandName="$(echo $0 | sed 's/\.\///')"
+  if [[ ! ":$PATH:" == *":$installDir:"* ]]; then
+    echo "export PATH=\"\$PATH:$installDir\"" >> $HOME/.bash_profile
+    echo "Installation complete. Please run the following command to make $commandName available for use within this shell:"
+    echo "  source $HOME/.bash_profile"
+  else
+    echo "$commandName installation complete"
+  fi
+  echo ""
+}
+
+install_prerequisites() {
+  # Installs software requirements
+  aws_installAwsItself
+  docker_osx_installDockerItself
+  git_installGitItself
+  kubectl_installKubectlItself
+  telepresence_installTelepresenceItself
+}
+
+ssh_username() {
+  echo "centos"
+}
+
+sh() { local envName=$1
+  private_errorIfNoEnvName "$envName"
+  private_remoteDevEnvPem_check
+  local masterNodeIp; masterNodeIp="$(private_masterNodeIP "$envName")"
+  ssh -o StrictHostKeyChecking=no -i "$(private_remoteDevEnvPemPath)" -t "$(ssh_username)@$masterNodeIp" "sudo su -"
+}
+
+kubectl_getContext() { local envName=$1
+  # Gets the kubectl config file from the remote env
+  private_errorIfNoEnvName "$envName"
+  private_remoteDevEnvPem_check
+  local kubeDir="$HOME/.kube"
+  mkdir -p "$kubeDir"
+  local qeKubeConf="$kubeDir/$envName.conf"
+  local masterNodeIp; masterNodeIp="$(private_masterNodeIP "$envName")"
+  local kubectlConfig="$(ssh -o StrictHostKeyChecking=no -i "$(private_remoteDevEnvPemPath)" "$(ssh_username)@$masterNodeIp" "sudo su -c 'cat /etc/kubernetes/admin.conf'")"
+  echo "$kubectlConfig" > "$qeKubeConf"
+  echo "$qeKubeConf"
+}
+
+kubectl-sh() { local envName=$1
+  private_errorIfNoEnvName "$envName"
+  kubectl_getContext "$envName" "$optionalDirPath"; export KUBECONFIG=$(kubectl_getContext "$envName" "$optionalDirPath")
+  bash
+}
+
+list() {
+  aws ec2 describe-instances \
+    --filters="Name=key-name,Values=remoteDevEnv" \
+    --region="us-east-1" \
+    --query='Reservations[*].Instances[?State.Name==`running`][].Tags[].Value' \
+    | sed 's/.*[012]-qe/qe/g' | sed 's/[",]//g' | sort | uniq | grep -v '[][]'
+}
+
+private_errorIfNoEnvName() { local envName=$1
+  if string_isEmpty "$envName"; then echo "Usage: $0 ${FUNCNAME[1]} <envName>"; exit 1; fi
+}
+
+private_masterNodeIP() { local envName=$1
+  private_errorIfNoEnvName "$envName"
+  local ec2InstanceName="control-plane-000-$envName"
+  local masterNodeIp=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=$ec2InstanceName" --query "Reservations[*].Instances[*].NetworkInterfaces[*].PrivateIpAddress" --output text)
+  if string_isEmpty "$masterNodeIp"; then
+    fail "No development environment with the name $envName exists. Exiting..."
+  fi
+  echo "$masterNodeIp"
+}
+
+private_remoteDevEnvPemPath() {
+  echo "$HOME/.ssh/remoteDevEnv.pem"
+}
+
+private_remoteDevEnvPem_check() {
+  if file_doesNotExist "$(private_remoteDevEnvPemPath)"; then
+    fail "$(private_remoteDevEnvPemPath) is necessary to continue (get it from LastPass)"
+  fi
+}
+
+selfSignedCert_addToKeychain() { local envName=$1
+  # Adds the env's self-signed cert to OSX keychain to prevent https warnings
+  private_errorIfNoEnvName "$envName"
+  private_remoteDevEnvPem_check
+  local masterNodeIp; masterNodeIp="$(private_masterNodeIP "$envName")"
+  local rootCertPath="$(mktemp)"
+  ssh -o StrictHostKeyChecking=no -i "$(private_remoteDevEnvPemPath)" centos@"$masterNodeIp" "sudo su -c 'cat /etc/haproxy/certs/cert-scripts/rootCA.pem'" > "$rootCertPath"
+  sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain "$rootCertPath"
+  rm -f "$rootCertPath"
+}
+
+start() { local envName=$1
+  # Prepares local environment and starts Telepresence
+  private_errorIfNoEnvName "$envName"
+  selfSignedCert_addToKeychain "$envName"
+
+  private_docker_build
+  KUBECONFIG=$(kubectl_getContext "$envName") private_telepresence_connect
+}
+
+version() {
+  echo "1.3.1"
+}
+
+######################################
+# bash-lib                           #
+######################################
+ 
+ansible_installAnsibleItself () 
+{ 
+    if ! program_exists "ansible"; then
+        brew install ansible;
+    fi
+}
+aws_installAwsItself () 
+{ 
+    if ! program_exists "aws"; then
+        brew install awscli;
+    fi
+}
+aws_run () 
+{ 
+    local args=$@;
+    aws_installAwsItself;
+    aws $args
+}
+brewCask_install () 
+{ 
+    local args=$@;
+    brewCask_run install $args
+}
+brewCask_installBrewCaskItself () 
+{ 
+    if ! program_exists "brew cask"; then
+        brew_install cask;
+    fi
+}
+brewCask_run () 
+{ 
+    local args=$@;
+    brewCask_installBrewCaskItself;
+    brew_run cask $args
+}
+brew_install () 
+{ 
+    local args=$@;
+    brew_run install $args
+}
+brew_installBrewItself () 
+{ 
+    if ! program_exists "brew"; then
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
+    fi
+}
+brew_run () 
+{ 
+    local args=$@;
+    brew_installBrewItself;
+    brew $args
+}
+brew_upgrade () 
+{ 
+    local args=$@;
+    brew_run upgrade $args
+}
+directory_doesNotExist () 
+{ 
+    local directoryPath=$1;
+    ! directory_exists "$directoryPath"
+}
+directory_exists () 
+{ 
+    local directoryPath=$1;
+    [[ -d "$directoryPath" ]]
+}
+docker_linux_installDockerItself () 
+{ 
+    if ! program_exists "docker"; then
+        curl -fsSL get.docker.com -o get-docker.sh;
+        sudo sh get-docker.sh;
+        rm -f get-docker.sh;
+    fi
+}
+docker_linux_start () 
+{ 
+    docker_linux_installDockerItself;
+    sudo systemctl start docker
+}
+docker_osx_installDockerItself () 
+{ 
+    if ! program_exists "docker"; then
+        brewCask_install docker;
+    fi
+}
+docker_start () 
+{ 
+    docker_osx_installDockerItself;
+    local dockerInfo="$(docker system info 2>&1)";
+    if string_isSubstring "$dockerInfo" "Is the docker daemon running"; then
+        open -a Docker;
+        pause 40 "Waiting 40 seconds for Docker to start";
+    fi
+}
+envVar_isExported () 
+{ 
+    local envVarName=$1;
+    $(env | grep -q ^$envVarName=)
+}
+envVar_notExported () 
+{ 
+    local envVarName=$1;
+    ! envVar_isExported "$envVarName"
+}
+error () 
+{ 
+    local errorMessage=$@;
+    echo "$errorMessage" 1>&2
+}
+fail () 
+{ 
+    local errorMessage=$@;
+    error "$errorMessage";
+    exit 1
+}
+file_doesNotExist () 
+{ 
+    local filePath=$1;
+    ! file_exists "$filePath"
+}
+file_exists () 
+{ 
+    local filePath=$1;
+    [[ -f "$filePath" ]]
+}
+files_allExceptHidden () 
+{ 
+    local startingPath=$1;
+    find "$startingPath" -type f -not -path '*/\.*'
+}
+gcloud_installGcloudItself () 
+{ 
+    if ! program_exists "gcloud"; then
+        brewCask_install google-cloud-sdk;
+    fi
+}
+gcloud_run () 
+{ 
+    local args=$@;
+    gcloud_installGcloudItself;
+    gcloud $args
+}
+git_installGitItself () 
+{ 
+    if ! program_exists "git"; then
+        brew_install git;
+    fi
+}
+git_run () 
+{ 
+    local args=$@;
+    git_installGitItself;
+    git $args
+}
+helm_initWithServiceAccount () 
+{ 
+    local nonemptyStringIfHelmIsInstalled="$(kubectl_run get pods -n kube-system -o=jsonpath='{.items[?(@.metadata.labels.app=="helm")].metadata.labels.app}')";
+    if strings_areEqual "$nonemptyStringIfHelmIsInstalled" ""; then
+        helm_run init;
+        kubectl_run create serviceaccount --namespace kube-system tiller;
+        kubectl_run create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller;
+        kubectl_run patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}';
+        wait 15 "Waiting 15 secs for Tiller pods to be ready...";
+    else
+        echo "Helm is already installed; Continuing...";
+    fi
+}
+helm_install () 
+{ 
+    local args=$@;
+    helm_initWithServiceAccount;
+    helm_run install $args
+}
+helm_installHelmItself () 
+{ 
+    if ! program_exists "helm"; then
+        brew_install kubernetes-helm;
+    fi
+}
+helm_run () 
+{ 
+    local args=$@;
+    helm_installHelmItself;
+    helm $args
+}
+jq_installJqItself () 
+{ 
+    if ! program_exists "jq"; then
+        brew_install jq;
+    fi
+}
+kops_installKopsItself () 
+{ 
+    if ! program_exists "kops"; then
+        brew_install kops;
+    fi
+}
+kops_run () 
+{ 
+    local args=$@;
+    kops_installKopsItself;
+    kops $args
+}
+kubectl_installKubectlItself () 
+{ 
+    if ! program_exists "kubectl"; then
+        brew_install kubectl;
+    fi
+}
+kubectl_run () 
+{ 
+    local args=$@;
+    kubectl_installKubectlItself;
+    kubectl $args
+}
+minikube_installMinikubeItself () 
+{ 
+    virtualbox_installVirtualBoxItself;
+    if ! program_exists "minikube"; then
+        brewCask_install minikube;
+    fi
+}
+minikube_run () 
+{ 
+    local args=$@;
+    virtualbox_installVirtualBoxItself;
+    minikube_installMinikubeItself;
+    minikube $args
+}
+minikube_start () 
+{ 
+    if ! minikube_run status | grep "minikube: Running" > /dev/null 2>&1; then
+        minikube_run start;
+    fi
+}
+pause () 
+{ 
+    local secondsToWait=$1;
+    local messageToPrint=$2;
+    echo "$messageToPrint";
+    sleep $secondsToWait
+}
+private_print_header () 
+{ 
+    local headerTitle=$1;
+    local headerTitleLength=${#headerTitle};
+    local topAndBottom="######################################";
+    local topAndBottomLength=${#topAndBottom};
+    local middleRowNumberOfSpaces=$(($topAndBottomLength-$headerTitleLength-3));
+    local middleRowSpaces="$(printf ' %.0s' $(seq 1 $middleRowNumberOfSpaces))";
+    echo "";
+    echo "$topAndBottom";
+    echo "# $headerTitle$middleRowSpaces#";
+    echo "$topAndBottom";
+    echo " "
+}
+program_exists () 
+{ 
+    local programName=$1;
+    command -v $programName > /dev/null 2>&1
+}
+string_isEmpty () 
+{ 
+    local string=$@;
+    strings_areEqual "$string" ""
+}
+string_isSubstring () 
+{ 
+    local largeString=$1;
+    local smallString=$2;
+    echo "$largeString" | grep -q "$smallString"
+}
+string_last_word () 
+{ 
+    local string=$@;
+    echo $string | awk '{print $NF}'
+}
+string_nth_word () 
+{ 
+    local num=$1;
+    local string=${@:2};
+    echo $string | cut -d " " -f $num
+}
+string_onlyAlnum () 
+{ 
+    local string=$@;
+    echo "$string" | tr -dc '[:alnum:]'
+}
+string_toLower () 
+{ 
+    local string=$@;
+    echo "$string" | tr '[:upper:]' '[:lower:]'
+}
+string_toUpper () 
+{ 
+    local string=$@;
+    echo "$string" | tr '[:lower:]' '[:upper:]'
+}
+strings_areEqual () 
+{ 
+    local string1=$1;
+    local string2=$2;
+    [ "$string1" == "$string2" ]
+}
+strings_notEqual () 
+{ 
+    local string1=$1;
+    local string2=$2;
+    ! strings_areEqual "$string1" "$string2"
+}
+telepresence_installTelepresenceItself () 
+{ 
+    if ! program_exists "telepresence"; then
+        brewCask_install osxfuse;
+        brew_install socat datawire/blackbird/telepresence;
+    fi
+}
+terraform_installTerraformItself () 
+{ 
+    if ! program_exists "terraform"; then
+        brew_install terraform;
+    fi
+}
+terragrunt_installTerragruntItself () 
+{ 
+    terraform_installTerraformItself;
+    if ! program_exists "terragrunt"; then
+        brew_install terragrunt;
+    fi
+}
+unix_timestamp () 
+{ 
+    date +%s
+}
+vault_installVaultItself () 
+{ 
+    if ! program_exists "vault"; then
+        brew_install vault;
+    fi
+}
+virtualbox_installVirtualBoxItself () 
+{ 
+    if ! program_exists "virtualbox"; then
+        brewCask_install virtualbox;
+    fi
+}
+wget_installWgetItself () 
+{ 
+    if ! program_exists "wget"; then
+        brew_install wget;
+    fi
+}
+wget_run () 
+{ 
+    local args=$@;
+    wget_installWgetItself;
+    wget $args
+}
+
+######################################
+# entrypoint                         #
+######################################
+ 
+
+trap help ERR
+
+if string_isEmpty "$@"; then
+  help
+fi
+
+$@

@@ -1,0 +1,5 @@
+quit()
+putStrLn "Hello World!"
+exit()
+exit
+putStrLn "Hello, World"

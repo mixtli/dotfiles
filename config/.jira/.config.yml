@@ -1,0 +1,2659 @@
+board:
+    id: 427
+    name: ADAP Annotation Tools
+    type: scrum
+epic:
+    name: customfield_10901
+    link: customfield_10900
+installation: Cloud
+issue:
+    fields:
+        custom:
+            - name: Sprint
+              key: customfield_10601
+              schema:
+                datatype: array
+                items: json
+            - name: Severity
+              key: customfield_12900
+              schema:
+                datatype: option
+            - name: Registration
+              key: customfield_15040
+              schema:
+                datatype: number
+            - name: Calibration
+              key: customfield_15041
+              schema:
+                datatype: number
+            - name: Risk Mitigation
+              key: customfield_15044
+              schema:
+                datatype: string
+            - name: Feature Demo
+              key: customfield_15045
+              schema:
+                datatype: string
+            - name: Business Impact
+              key: customfield_15043
+              schema:
+                datatype: string
+            - name: User Doc
+              key: customfield_15046
+              schema:
+                datatype: string
+            - name: Help Needed?
+              key: customfield_15047
+              schema:
+                datatype: option
+            - name: Fidelity Score - Scope Deviation
+              key: customfield_15030
+              schema:
+                datatype: option
+            - name: Recruitment Target
+              key: customfield_15033
+              schema:
+                datatype: number
+            - name: Productivity Target Type
+              key: customfield_15034
+              schema:
+                datatype: option
+            - name: Deliverable Volume - Target
+              key: customfield_15031
+              schema:
+                datatype: number
+            - name: Recruitment Target Type
+              key: customfield_15032
+              schema:
+                datatype: option
+            - name: 'Launch '
+              key: customfield_15037
+              schema:
+                datatype: date
+            - name: Engineering timeline
+              key: customfield_15038
+              schema:
+                datatype: date
+            - name: Productivity Target
+              key: customfield_15035
+              schema:
+                datatype: number
+            - name: AC Project ID
+              key: customfield_15036
+              schema:
+                datatype: number
+            - name: Target
+              key: customfield_15039
+              schema:
+                datatype: number
+            - name: Time to first response
+              key: customfield_14290
+              schema:
+                datatype: sd-servicelevelagreement
+            - name: Request language
+              key: customfield_14291
+              schema:
+                datatype: sd-request-lang
+            - name: Begin Date
+              key: customfield_14296
+              schema:
+                datatype: datetime
+            - name: Project Related Documents 1
+              key: customfield_15022
+              schema:
+                datatype: string
+            - name: End Date
+              key: customfield_14297
+              schema:
+                datatype: datetime
+            - name: Project Related Documents 2
+              key: customfield_15023
+              schema:
+                datatype: string
+            - name: Design Owner
+              key: customfield_15020
+              schema:
+                datatype: user
+            - name: Portfolio
+              key: customfield_15021
+              schema:
+                datatype: option
+            - name: ML / DS Lead
+              key: customfield_15026
+              schema:
+                datatype: user
+            - name: Project - Roster Fill Health
+              key: customfield_15027
+              schema:
+                datatype: option
+            - name: Project Related Documents 3
+              key: customfield_15024
+              schema:
+                datatype: string
+            - name: ML / DS Owner
+              key: customfield_15025
+              schema:
+                datatype: user
+            - name: Project - Productivity Health
+              key: customfield_15028
+              schema:
+                datatype: option
+            - name: Project - Setup & Qualification Health
+              key: customfield_15029
+              schema:
+                datatype: option
+            - name: Manual QA required
+              key: customfield_10800
+              schema:
+                datatype: option
+            - name: Use Case (SQ)
+              key: customfield_14281
+              schema:
+                datatype: array
+                items: option
+            - name: Paid Pilot Crowd Cost Budget
+              key: customfield_14280
+              schema:
+                datatype: string
+            - name: Product Lead
+              key: customfield_15011
+              schema:
+                datatype: user
+            - name: Request participants
+              key: customfield_14285
+              schema:
+                datatype: array
+                items: user
+            - name: Lowlights
+              key: customfield_15012
+              schema:
+                datatype: string
+            - name: Satisfaction
+              key: customfield_14286
+              schema:
+                datatype: sd-feedback
+            - name: Eng Owner
+              key: customfield_15010
+              schema:
+                datatype: user
+            - name: Start date
+              key: customfield_14284
+              schema:
+                datatype: date
+            - name: Time to resolution
+              key: customfield_14289
+              schema:
+                datatype: sd-servicelevelagreement
+            - name: Test field
+              key: customfield_15016
+              schema:
+                datatype: number
+            - name: "PRD \U0001F195"
+              key: customfield_15013
+              schema:
+                datatype: string
+            - name: Satisfaction date
+              key: customfield_14287
+              schema:
+                datatype: datetime
+            - name: Approvers
+              key: customfield_14288
+              schema:
+                datatype: array
+                items: user
+            - name: "BRD \U0001F195"
+              key: customfield_15014
+              schema:
+                datatype: string
+            - name: Business Owner
+              key: customfield_15017
+              schema:
+                datatype: user
+            - name: Appen Connect ID
+              key: customfield_15018
+              schema:
+                datatype: string
+            - name: Qualification Goal
+              key: customfield_14950
+              schema:
+                datatype: string
+            - name: BE-JSE (mths)
+              key: customfield_14711
+              schema:
+                datatype: number
+            - name: Payment Set Up
+              key: customfield_14953
+              schema:
+                datatype: option
+            - name: Request Type
+              key: customfield_13500
+              schema:
+                datatype: sd-customerrequesttype
+            - name: Request Urgency
+              key: customfield_14832
+              schema:
+                datatype: option
+            - name: BE-RSE (mths)
+              key: customfield_14712
+              schema:
+                datatype: number
+            - name: Gap Headcount
+              key: customfield_14833
+              schema:
+                datatype: number
+            - name: Gross Margin % - Target
+              key: customfield_14954
+              schema:
+                datatype: number
+            - name: PS Estimated Time
+              key: customfield_11201
+              schema:
+                datatype: number
+            - name: Appen Connect Project URL
+              key: customfield_14830
+              schema:
+                datatype: string
+            - name: Internal Labor Hour Goal
+              key: customfield_14951
+              schema:
+                datatype: number
+            - name: External Labour Hour Goal
+              key: customfield_14952
+              schema:
+                datatype: number
+            - name: MLS/E (mths)
+              key: customfield_14710
+              schema:
+                datatype: number
+            - name: Reason for Inquiry Request
+              key: customfield_14831
+              schema:
+                datatype: option
+            - name: Work Needed
+              key: customfield_11203
+              schema:
+                datatype: array
+                items: option
+            - name: Country
+              key: customfield_14825
+              schema:
+                datatype: option
+            - name: Key Updates from last week
+              key: customfield_14705
+              schema:
+                datatype: string
+            - name: Language
+              key: customfield_14826
+              schema:
+                datatype: array
+                items: option
+            - name: Recruitment Goal
+              key: customfield_14947
+              schema:
+                datatype: number
+            - name: Story Points
+              key: customfield_10105
+              schema:
+                datatype: number
+            - name: Gender
+              key: customfield_14823
+              schema:
+                datatype: array
+                items: option
+            - name: Risk / Issue / Challenge
+              key: customfield_14944
+              schema:
+                datatype: string
+            - name: Age
+              key: customfield_14824
+              schema:
+                datatype: array
+                items: option
+            - name: Release Version History
+              key: customfield_10107
+              schema:
+                datatype: array
+                items: version
+            - name: Sourcing Turnaround Time
+              key: customfield_14829
+              schema:
+                datatype: date
+            - name: DE (mths)
+              key: customfield_14709
+              schema:
+                datatype: number
+            - name: Dialect
+              key: customfield_14827
+              schema:
+                datatype: array
+                items: option
+            - name: Highlights
+              key: customfield_14706
+              schema:
+                datatype: string
+            - name: Productivity Goal
+              key: customfield_14948
+              schema:
+                datatype: number
+            - name: FE (mths)
+              key: customfield_14707
+              schema:
+                datatype: number
+            - name: Quality Goal
+              key: customfield_14949
+              schema:
+                datatype: string
+            - name: Recruitment Turnaround Time
+              key: customfield_14828
+              schema:
+                datatype: date
+            - name: Business Team
+              key: customfield_14942
+              schema:
+                datatype: option
+            - name: Design Lead
+              key: customfield_14700
+              schema:
+                datatype: user
+            - name: Ethnicity
+              key: customfield_14821
+              schema:
+                datatype: array
+                items: option
+            - name: Iteration Reason
+              key: customfield_13610
+              schema:
+                datatype: string
+            - name: '[CHART] Time in Status'
+              key: customfield_10100
+              schema:
+                datatype: any
+            - name: Ethnicity
+              key: customfield_14822
+              schema:
+                datatype: option
+            - name: '[CHART] Date of First Response'
+              key: customfield_10101
+              schema:
+                datatype: datetime
+            - name: Flagged
+              key: customfield_10102
+              schema:
+                datatype: array
+                items: option
+            - name: Epic/Theme
+              key: customfield_10103
+              schema:
+                datatype: array
+                items: string
+            - name: Expected Invoicing Conversion Rate
+              key: customfield_14820
+              schema:
+                datatype: number
+            - name: 1st Iteration Launched
+              key: customfield_13603
+              schema:
+                datatype: date
+            - name: Website 5
+              key: customfield_14814
+              schema:
+                datatype: string
+            - name: Delivery Date
+              key: customfield_11304
+              schema:
+                datatype: datetime
+            - name: Job Transferred
+              key: customfield_13602
+              schema:
+                datatype: date
+            - name: Website 5 - Estimated Cost
+              key: customfield_14815
+              schema:
+                datatype: number
+            - name: Pilot Complete
+              key: customfield_13605
+              schema:
+                datatype: date
+            - name: Recruitment Support Needed?
+              key: customfield_14933
+              schema:
+                datatype: option
+            - name: Website 4
+              key: customfield_14812
+              schema:
+                datatype: string
+            - name: Job Complete
+              key: customfield_13604
+              schema:
+                datatype: date
+            - name: Website 4 - Estimated Cost
+              key: customfield_14813
+              schema:
+                datatype: number
+            - name: Can the pay rate be disclosed or advertised to the candidate?
+              key: customfield_14939
+              schema:
+                datatype: option
+            - name: Expected Invoicing Conversion Rate
+              key: customfield_14818
+              schema:
+                datatype: number
+            - name: Lost Reason Context
+              key: customfield_13607
+              schema:
+                datatype: string
+            - name: Customer Name
+              key: customfield_13606
+              schema:
+                datatype: string
+            - name: Expected Contributor Response Rate
+              key: customfield_14819
+              schema:
+                datatype: number
+            - name: Headcount (SRC)
+              key: customfield_14816
+              schema:
+                datatype: number
+            - name: Pilot on Hold
+              key: customfield_13609
+              schema:
+                datatype: array
+                items: option
+            - name: Pay Type
+              key: customfield_14938
+              schema:
+                datatype: option
+            - name: Demand Planner Sign Off
+              key: customfield_14931
+              schema:
+                datatype: array
+                items: option
+            - name: Website 3
+              key: customfield_14810
+              schema:
+                datatype: string
+            - name: Program Manager Sign Off
+              key: customfield_14932
+              schema:
+                datatype: array
+                items: option
+            - name: Website 3 - Estimated Cost
+              key: customfield_14811
+              schema:
+                datatype: number
+            - name: Account Executive
+              key: customfield_11301
+              schema:
+                datatype: user
+            - name: Pilot Use-case
+              key: customfield_13601
+              schema:
+                datatype: option
+            - name: Data Recieved
+              key: customfield_13600
+              schema:
+                datatype: date
+            - name: Volume
+              key: customfield_14930
+              schema:
+                datatype: number
+            - name: Expected Conversion Rate for Converted Leads
+              key: customfield_14803
+              schema:
+                datatype: number
+            - name: Legal Information
+              key: customfield_14924
+              schema:
+                datatype: option
+            - name: Estimated Cost Per Market
+              key: customfield_14804
+              schema:
+                datatype: number
+            - name: Risks Assessment
+              key: customfield_14925
+              schema:
+                datatype: option
+            - name: Tool Information
+              key: customfield_14922
+              schema:
+                datatype: option
+            - name: Workday Project ID
+              key: customfield_14801
+              schema:
+                datatype: string
+            - name: Ethnicity
+              key: customfield_14802
+              schema:
+                datatype: string
+            - name: Financial Information
+              key: customfield_14923
+              schema:
+                datatype: option
+            - name: Account Executive
+              key: customfield_14928
+              schema:
+                datatype: array
+                items: user
+            - name: Website 1 - Estimated Cost
+              key: customfield_14807
+              schema:
+                datatype: number
+            - name: Status Summary Update
+              key: customfield_14929
+              schema:
+                datatype: string
+            - name: Website 2
+              key: customfield_14808
+              schema:
+                datatype: string
+            - name: Esimated Cost Per Converted Lead
+              key: customfield_14805
+              schema:
+                datatype: number
+            - name: Workday Info
+              key: customfield_14926
+              schema:
+                datatype: option
+            - name: Customer Docs
+              key: customfield_14927
+              schema:
+                datatype: option
+            - name: Website 1
+              key: customfield_14806
+              schema:
+                datatype: string
+            - name: Website 2 - Estimated Cost
+              key: customfield_14809
+              schema:
+                datatype: number
+            - name: Quality Information
+              key: customfield_14920
+              schema:
+                datatype: option
+            - name: Field Work Partner Required?
+              key: customfield_14800
+              schema:
+                datatype: option
+            - name: Schedule Information
+              key: customfield_14921
+              schema:
+                datatype: option
+            - name: Project Set Up Timeline
+              key: customfield_14913
+              schema:
+                datatype: date
+            - name: Data Retention
+              key: customfield_14914
+              schema:
+                datatype: option
+            - name: Recruitment Handoff
+              key: customfield_14911
+              schema:
+                datatype: string
+            - name: Complete Handover List
+              key: customfield_14912
+              schema:
+                datatype: string
+            - name: Complete Handoff Checklist
+              key: customfield_14917
+              schema:
+                datatype: string
+            - name: Scope Information
+              key: customfield_14918
+              schema:
+                datatype: option
+            - name: Start Date
+              key: customfield_14915
+              schema:
+                datatype: date
+            - name: Expected Completion Date
+              key: customfield_14916
+              schema:
+                datatype: date
+            - name: Demographics Information
+              key: customfield_14919
+              schema:
+                datatype: option
+            - name: Set Up and Qualification Handoff
+              key: customfield_14910
+              schema:
+                datatype: string
+            - name: HCE?
+              key: customfield_13700
+              schema:
+                datatype: array
+                items: option
+            - name: Client Services Checklist
+              key: customfield_14902
+              schema:
+                datatype: array
+                items: option
+            - name: Stage
+              key: customfield_14900
+              schema:
+                datatype: option
+            - name: Client Name
+              key: customfield_14901
+              schema:
+                datatype: string
+            - name: Scope Deviation
+              key: customfield_14906
+              schema:
+                datatype: option
+            - name: Type of Work
+              key: customfield_14907
+              schema:
+                datatype: option
+            - name: Country (SQ)
+              key: customfield_14904
+              schema:
+                datatype: array
+                items: option
+            - name: Priority
+              key: customfield_14905
+              schema:
+                datatype: option
+            - name: Client Services Handoff
+              key: customfield_14908
+              schema:
+                datatype: string
+            - name: Productivity Handoff
+              key: customfield_14909
+              schema:
+                datatype: string
+            - name: Call Notes
+              key: customfield_13800
+              schema:
+                datatype: string
+            - name: Project Job IDs
+              key: customfield_11507
+              schema:
+                datatype: string
+            - name: Rank
+              key: customfield_11500
+              schema:
+                datatype: any
+            - name: Requested Due Date
+              key: customfield_12700
+              schema:
+                datatype: date
+            - name: Customer Status
+              key: customfield_13901
+              schema:
+                datatype: option
+            - name: CSM
+              key: customfield_13904
+              schema:
+                datatype: user
+            - name: Committed Date
+              key: customfield_11604
+              schema:
+                datatype: date
+            - name: Est. Time Per Judgment (minutes)
+              key: customfield_13903
+              schema:
+                datatype: number
+            - name: CSE
+              key: customfield_13905
+              schema:
+                datatype: user
+            - name: Rows to be completed
+              key: customfield_13907
+              schema:
+                datatype: number
+            - name: Corporate Risk (SQ)
+              key: customfield_14670
+              schema:
+                datatype: number
+            - name: Gender (SRC)
+              key: customfield_14792
+              schema:
+                datatype: option
+            - name: Legal Risk (SQ)
+              key: customfield_14671
+              schema:
+                datatype: number
+            - name: Language (SRC)
+              key: customfield_14790
+              schema:
+                datatype: option
+            - name: Client Services Lead 2
+              key: customfield_14432
+              schema:
+                datatype: user
+            - name: Converted Leads
+              key: customfield_14795
+              schema:
+                datatype: number
+            - name: Customer Priority
+              key: customfield_14553
+              schema:
+                datatype: array
+                items: option
+            - name: Parent Link
+              key: customfield_13100
+              schema:
+                datatype: any
+            - name: Solution Engineering or PSE Risk (SQ)
+              key: customfield_14674
+              schema:
+                datatype: number
+            - name: Assessed Risk (Out of date)
+              key: customfield_14554
+              schema:
+                datatype: array
+                items: option
+            - name: Days for Converted Leads
+              key: customfield_14796
+              schema:
+                datatype: number
+            - name: ITSD Ticket Number
+              key: customfield_14433
+              schema:
+                datatype: string
+            - name: Product Risk (SQ)
+              key: customfield_14675
+              schema:
+                datatype: number
+            - name: Crowd HR / Sourcing / Vendor Management Risk (SQ)
+              key: customfield_14672
+              schema:
+                datatype: number
+            - name: Tools 1 (SQ)
+              key: customfield_14430
+              schema:
+                datatype: array
+                items: option
+            - name: Customer Deadline
+              key: customfield_14552
+              schema:
+                datatype: date
+            - name: Data Source
+              key: customfield_14431
+              schema:
+                datatype: array
+                items: option
+            - name: Sustainability Risk (SQ)
+              key: customfield_14673
+              schema:
+                datatype: number
+            - name: Previous Reference (Ticket, Project, or Client)
+              key: customfield_14799
+              schema:
+                datatype: string
+            - name: Product Area
+              key: customfield_14557
+              schema:
+                datatype: option
+            - name: Risk Summary (SQ)
+              key: customfield_14678
+              schema:
+                datatype: string
+            - name: Client Services Lead 3
+              key: customfield_14437
+              schema:
+                datatype: user
+            - name: Product categorization
+              key: customfield_14316
+              schema:
+                datatype: option-with-child
+            - name: Requestor BU
+              key: customfield_14679
+              schema:
+                datatype: array
+                items: option
+            - name: Ticket Created
+              key: customfield_14558
+              schema:
+                datatype: date
+            - name: Client Services Risk (SQ)
+              key: customfield_14676
+              schema:
+                datatype: number
+            - name: Demographic Requirements
+              key: customfield_14797
+              schema:
+                datatype: string
+            - name: Target start
+              key: customfield_14434
+              schema:
+                datatype: date
+            - name: IT Risk (SQ)
+              key: customfield_14677
+              schema:
+                datatype: number
+            - name: Reason For Request
+              key: customfield_14798
+              schema:
+                datatype: option
+            - name: Target end
+              key: customfield_14435
+              schema:
+                datatype: date
+            - name: Environment (SQ)
+              key: customfield_14429
+              schema:
+                datatype: array
+                items: option
+            - name: Customer Request
+              key: customfield_14548
+              schema:
+                datatype: string
+            - name: Job ID
+              key: customfield_14306
+              schema:
+                datatype: string
+            - name: Social Impact Risk (SQ)
+              key: customfield_14669
+              schema:
+                datatype: number
+            - name: WD Project ID
+              key: customfield_14427
+              schema:
+                datatype: string
+            - name: Crowd Type
+              key: customfield_14428
+              schema:
+                datatype: array
+                items: option
+            - name: Personas Who Benefit
+              key: customfield_14549
+              schema:
+                datatype: array
+                items: option
+            - name: Story point estimate
+              key: customfield_14307
+              schema:
+                datatype: number
+            - name: Demographic Requirements
+              key: customfield_14780
+              schema:
+                datatype: string
+            - name: Customer_Name
+              key: customfield_14660
+              schema:
+                datatype: array
+                items: option
+            - name: Reason For Request
+              key: customfield_14781
+              schema:
+                datatype: option
+            - name: Data Type
+              key: customfield_14421
+              schema:
+                datatype: array
+                items: option
+            - name: Expected RTC Conversion Rate
+              key: customfield_14784
+              schema:
+                datatype: number
+            - name: SOW Amount
+              key: customfield_14663
+              schema:
+                datatype: number
+            - name: Affected services
+              key: customfield_14543
+              schema:
+                datatype: array
+                items: service-entity-field
+            - name: Age
+              key: customfield_14785
+              schema:
+                datatype: string
+            - name: Project Documents
+              key: customfield_14422
+              schema:
+                datatype: string
+            - name: Requested Internal Kickoff Date
+              key: customfield_14664
+              schema:
+                datatype: date
+            - name: Previous Reference (Ticket, Project, or Client)
+              key: customfield_14782
+              schema:
+                datatype: string
+            - name: Can supply demand with existing crowd?
+              key: customfield_14783
+              schema:
+                datatype: option
+            - name: Task Category (Service Line)
+              key: customfield_14420
+              schema:
+                datatype: array
+                items: option
+            - name: Timeline Estimate
+              key: customfield_14662
+              schema:
+                datatype: string
+            - name: Commitment Date
+              key: customfield_14546
+              schema:
+                datatype: date
+            - name: Dialects
+              key: customfield_14788
+              schema:
+                datatype: string
+            - name: Opportunity Type
+              key: customfield_14425
+              schema:
+                datatype: array
+                items: option
+            - name: Project Summary
+              key: customfield_14667
+              schema:
+                datatype: string
+            - name: Commitment Date Comment
+              key: customfield_14547
+              schema:
+                datatype: string
+            - name: Customer Urgency
+              key: customfield_14668
+              schema:
+                datatype: option
+            - name: Description
+              key: customfield_14305
+              schema:
+                datatype: string
+            - name: Task Type/Use-case (SQ)
+              key: customfield_14426
+              schema:
+                datatype: array
+                items: option
+            - name: Gender
+              key: customfield_14786
+              schema:
+                datatype: option
+            - name: Pricing Calculators
+              key: customfield_14423
+              schema:
+                datatype: string
+            - name: Requested Client Kickoff Date
+              key: customfield_14665
+              schema:
+                datatype: date
+            - name: Client Facing Quote Summary
+              key: customfield_14424
+              schema:
+                datatype: string
+            - name: Customer
+              key: customfield_14303
+              schema:
+                datatype: array
+                items: string
+            - name: Ethnicity
+              key: customfield_14787
+              schema:
+                datatype: string
+            - name: Responsible Product Manager
+              key: customfield_14545
+              schema:
+                datatype: option
+            - name: Secure Facility Required
+              key: customfield_14666
+              schema:
+                datatype: option
+            - name: SA Lead
+              key: customfield_14418
+              schema:
+                datatype: user
+            - name: Client Services Lead
+              key: customfield_14419
+              schema:
+                datatype: user
+            - name: Days for Headcount
+              key: customfield_14779
+              schema:
+                datatype: number
+            - name: Quote Summary (Internal)
+              key: customfield_14416
+              schema:
+                datatype: string
+            - name: Tools 2 (SQ)
+              key: customfield_14658
+              schema:
+                datatype: option
+            - name: Sales Lead
+              key: customfield_14417
+              schema:
+                datatype: user
+            - name: Tools 3 (SQ)
+              key: customfield_14659
+              schema:
+                datatype: option
+            - name: Week 3 Ramp
+              key: customfield_14890
+              schema:
+                datatype: option
+            - name: Stop Infosec. Review (DD USE ONLY)
+              key: customfield_14770
+              schema:
+                datatype: date
+            - name: Week 4 Ramp
+              key: customfield_14891
+              schema:
+                datatype: option
+            - name: Redline Cycle Count (DD USE ONLY)
+              key: customfield_14773
+              schema:
+                datatype: number
+            - name: Volume 3
+              key: customfield_14652
+              schema:
+                datatype: number
+            - name: Week 7 Ramp
+              key: customfield_14894
+              schema:
+                datatype: option
+            - name: Per Unit Cost 1
+              key: customfield_14653
+              schema:
+                datatype: number
+            - name: SFDC Opp Name
+              key: customfield_14411
+              schema:
+                datatype: string
+            - name: Start Deal Desk – Biz Terms Review (DD USE ONLY)
+              key: customfield_14774
+              schema:
+                datatype: date
+            - name: Week 8 Ramp
+              key: customfield_14895
+              schema:
+                datatype: option
+            - name: Start Customer Redline Review (DD USE ONLY)
+              key: customfield_14771
+              schema:
+                datatype: date
+            - name: Volume 1
+              key: customfield_14650
+              schema:
+                datatype: number
+            - name: Week 5 Ramp
+              key: customfield_14892
+              schema:
+                datatype: option
+            - name: Stop Customer Redline Review (DD USE ONLY)
+              key: customfield_14772
+              schema:
+                datatype: date
+            - name: Volume 2
+              key: customfield_14651
+              schema:
+                datatype: number
+            - name: Week 6 Ramp
+              key: customfield_14893
+              schema:
+                datatype: option
+            - name: Development
+              key: customfield_13200
+              schema:
+                datatype: any
+            - name: Language
+              key: customfield_14777
+              schema:
+                datatype: option
+            - name: Per Unit Price 2
+              key: customfield_14656
+              schema:
+                datatype: number
+            - name: Week 11 Ramp
+              key: customfield_14898
+              schema:
+                datatype: option
+            - name: Committed Headcount
+              key: customfield_14778
+              schema:
+                datatype: number
+            - name: Per Unit Price 3
+              key: customfield_14657
+              schema:
+                datatype: number
+            - name: Week 12 Ramp
+              key: customfield_14899
+              schema:
+                datatype: option
+            - name: Per Unit Cost 2
+              key: customfield_14654
+              schema:
+                datatype: number
+            - name: SFDC Quote ID
+              key: customfield_14412
+              schema:
+                datatype: string
+            - name: Week 9 Ramp
+              key: customfield_14896
+              schema:
+                datatype: option
+            - name: Country
+              key: customfield_14776
+              schema:
+                datatype: option
+            - name: Per Unit Cost 3
+              key: customfield_14655
+              schema:
+                datatype: number
+            - name: Week 10 Ramp
+              key: customfield_14897
+              schema:
+                datatype: option
+            - name: Data Unit
+              key: customfield_14528
+              schema:
+                datatype: array
+                items: option
+            - name: External issue ID (A)
+              key: customfield_14407
+              schema:
+                datatype: string
+            - name: Per Unit Price 1
+              key: customfield_14529
+              schema:
+                datatype: number
+            - name: External issue ID (E)
+              key: customfield_14405
+              schema:
+                datatype: string
+            - name: Project Weeks (SQ)
+              key: customfield_14526
+              schema:
+                datatype: number
+            - name: Stop Legal Dept. – Legal Terms Review (DD USE ONLY)
+              key: customfield_14768
+              schema:
+                datatype: date
+            - name: Use-Case Taxonomy 2
+              key: customfield_14647
+              schema:
+                datatype: string
+            - name: Week 2 Ramp
+              key: customfield_14889
+              schema:
+                datatype: option
+            - name: External issue ID (D)
+              key: customfield_14406
+              schema:
+                datatype: string
+            - name: Scrum Lead
+              key: customfield_14527
+              schema:
+                datatype: user
+            - name: Start Infosec. Review (DD USE ONLY)
+              key: customfield_14769
+              schema:
+                datatype: date
+            - name: Use-Case Taxonomy 3
+              key: customfield_14648
+              schema:
+                datatype: string
+            - name: Scrum Team
+              key: customfield_14409
+              schema:
+                datatype: option
+            - name: Week 5 Ramp
+              key: customfield_14880
+              schema:
+                datatype: option
+            - name: Compass
+              key: customfield_14641
+              schema:
+                datatype: string
+            - name: Number of Contributors
+              key: customfield_14762
+              schema:
+                datatype: number
+            - name: Recruitment Lead
+              key: customfield_14520
+              schema:
+                datatype: user
+            - name: Week 8 Ramp
+              key: customfield_14883
+              schema:
+                datatype: option
+            - name: Category
+              key: customfield_14642
+              schema:
+                datatype: option
+            - name: Legacy Issue URL
+              key: customfield_14400
+              schema:
+                datatype: string
+            - name: PS Billable Hours
+              key: customfield_14521
+              schema:
+                datatype: number
+            - name: Recruitment Effort
+              key: customfield_14763
+              schema:
+                datatype: option
+            - name: Week 9 Ramp
+              key: customfield_14884
+              schema:
+                datatype: option
+            - name: Domain Expertise
+              key: customfield_14760
+              schema:
+                datatype: array
+                items: string
+            - name: Week 6 Ramp
+              key: customfield_14881
+              schema:
+                datatype: option
+            - name: Client Turnaround Time
+              key: customfield_14761
+              schema:
+                datatype: date
+            - name: Post Mortem Analysis
+              key: customfield_14640
+              schema:
+                datatype: string
+            - name: Week 7 Ramp
+              key: customfield_14882
+              schema:
+                datatype: option
+            - name: ITSec Tickets
+              key: customfield_14645
+              schema:
+                datatype: array
+                items: option
+            - name: PM Hours (SQ)
+              key: customfield_14524
+              schema:
+                datatype: number
+            - name: Stop Deal Desk – Biz Terms Review (DD USE ONLY)
+              key: customfield_14766
+              schema:
+                datatype: date
+            - name: Week 12 Ramp
+              key: customfield_14887
+              schema:
+                datatype: option
+            - name: Description - PSE
+              key: customfield_14404
+              schema:
+                datatype: string
+            - name: Specialist Hours (SQ)
+              key: customfield_14525
+              schema:
+                datatype: number
+            - name: Start Legal Dept. – Legal Terms Review (DD USE ONLY)
+              key: customfield_14767
+              schema:
+                datatype: date
+            - name: Use-Case Taxonomy 1
+              key: customfield_14646
+              schema:
+                datatype: string
+            - name: Week 1 Ramp
+              key: customfield_14888
+              schema:
+                datatype: option
+            - name: Estimated Quote Completion
+              key: customfield_14643
+              schema:
+                datatype: date
+            - name: Immediate Action Items for Recruitment
+              key: customfield_14764
+              schema:
+                datatype: string
+            - name: Legacy Issue ID
+              key: customfield_14401
+              schema:
+                datatype: string
+            - name: TL Queue
+              key: customfield_14522
+              schema:
+                datatype: option
+            - name: Week 10 Ramp
+              key: customfield_14885
+              schema:
+                datatype: option
+            - name: Approver groups
+              key: customfield_14523
+              schema:
+                datatype: array
+                items: group
+            - name: CS Project Manager
+              key: customfield_14402
+              schema:
+                datatype: user
+            - name: Week 11 Ramp
+              key: customfield_14886
+              schema:
+                datatype: option
+            - name: Environments Affected
+              key: customfield_14517
+              schema:
+                datatype: array
+                items: option
+            - name: Estimated Monthly Savings
+              key: customfield_14759
+              schema:
+                datatype: number
+            - name: Locked forms
+              key: customfield_14638
+              schema:
+                datatype: number
+            - name: Original GPS issue ID
+              key: customfield_14518
+              schema:
+                datatype: string
+            - name: Total forms
+              key: customfield_14639
+              schema:
+                datatype: number
+            - name: Open forms
+              key: customfield_14636
+              schema:
+                datatype: number
+            - name: Product Priorities
+              key: customfield_14757
+              schema:
+                datatype: option
+            - name: Project Learnings - Roster Fill
+              key: customfield_14999
+              schema:
+                datatype: string
+            - name: Time Type
+              key: customfield_14515
+              schema:
+                datatype: option
+            - name: Week 3 Ramp
+              key: customfield_14878
+              schema:
+                datatype: option
+            - name: Estimated Monthly Cost
+              key: customfield_14758
+              schema:
+                datatype: number
+            - name: Reopen Count
+              key: customfield_14516
+              schema:
+                datatype: number
+            - name: Submitted forms
+              key: customfield_14637
+              schema:
+                datatype: number
+            - name: Week 4 Ramp
+              key: customfield_14879
+              schema:
+                datatype: option
+            - name: Customer Importance
+              key: customfield_14519
+              schema:
+                datatype: option
+            - name: Qualification Risk
+              key: customfield_14990
+              schema:
+                datatype: option
+            - name: 'Business Success Metric '
+              key: customfield_14751
+              schema:
+                datatype: string
+            - name: Document Length/Data Complexity - Actual
+              key: customfield_14630
+              schema:
+                datatype: option
+            - name: Fidelity Score - Roster
+              key: customfield_14993
+              schema:
+                datatype: option
+            - name: Week 1 Ramp
+              key: customfield_14872
+              schema:
+                datatype: option
+            - name: Calibration Effort - Actual
+              key: customfield_14631
+              schema:
+                datatype: option
+            - name: Fidelity Score - Schedule
+              key: customfield_14994
+              schema:
+                datatype: option
+            - name: GBU Expert
+              key: customfield_14752
+              schema:
+                datatype: array
+                items: string
+            - name: Week 2 Ramp
+              key: customfield_14873
+              schema:
+                datatype: option
+            - name: Productivity Risk
+              key: customfield_14991
+              schema:
+                datatype: option
+            - name: Team
+              key: customfield_13300
+              schema:
+                datatype: any
+            - name: Deliverables
+              key: customfield_14750
+              schema:
+                datatype: string
+            - name: Fidelity Score - Budget
+              key: customfield_14992
+              schema:
+                datatype: option
+            - name: Association Count
+              key: customfield_14634
+              schema:
+                datatype: number
+            - name: Consult
+              key: customfield_14755
+              schema:
+                datatype: array
+                items: string
+            - name: Project Learnings Summary
+              key: customfield_14997
+              schema:
+                datatype: string
+            - name: Qualification Lead
+              key: customfield_14876
+              schema:
+                datatype: user
+            - name: Associations
+              key: customfield_14635
+              schema:
+                datatype: string
+            - name: Crowd Demographic Requirements
+              key: customfield_14877
+              schema:
+                datatype: string
+            - name: Product Line
+              key: customfield_14514
+              schema:
+                datatype: option
+            - name: Project Learnings - Set up & Qualification
+              key: customfield_14998
+              schema:
+                datatype: string
+            - name: 'Status '
+              key: customfield_14756
+              schema:
+                datatype: option
+            - name: Business priority
+              key: customfield_14753
+              schema:
+                datatype: array
+                items: string
+            - name: Data Transformation Effort - Actual
+              key: customfield_14632
+              schema:
+                datatype: option
+            - name: Fidelity Score - Quality
+              key: customfield_14995
+              schema:
+                datatype: option
+            - name: Delivery Effort - Actual
+              key: customfield_14633
+              schema:
+                datatype: option
+            - name: Product Status update
+              key: customfield_14754
+              schema:
+                datatype: string
+            - name: Productivity Lead
+              key: customfield_14875
+              schema:
+                datatype: user
+            - name: Project Scope
+              key: customfield_14996
+              schema:
+                datatype: string
+            - name: Goal
+              key: customfield_14748
+              schema:
+                datatype: option
+            - name: Production Probability
+              key: customfield_14869
+              schema:
+                datatype: array
+                items: option
+            - name: RPH - QA - Actual
+              key: customfield_14627
+              schema:
+                datatype: string
+            - name: Expected Benefits
+              key: customfield_14749
+              schema:
+                datatype: string
+            - name: QA Type - Actual
+              key: customfield_14628
+              schema:
+                datatype: string
+            - name: Completion Date
+              key: customfield_14867
+              schema:
+                datatype: date
+            - name: Crowd HR Risk
+              key: customfield_14988
+              schema:
+                datatype: option
+            - name: Roster Size - QA - Actual
+              key: customfield_14625
+              schema:
+                datatype: number
+            - name: Cavite Resource Risk
+              key: customfield_14989
+              schema:
+                datatype: option
+            - name: Link to PPR
+              key: customfield_14868
+              schema:
+                datatype: string
+            - name: Roster Size - QA - Actual
+              key: customfield_14626
+              schema:
+                datatype: string
+            - name: Guidelines Source - Actual
+              key: customfield_14629
+              schema:
+                datatype: option
+            - name: Productivity
+              key: customfield_14861
+              schema:
+                datatype: option
+            - name: Responsible
+              key: customfield_14740
+              schema:
+                datatype: array
+                items: option
+            - name: Sustainability Risk
+              key: customfield_14982
+              schema:
+                datatype: option
+            - name: IT Risk
+              key: customfield_14983
+              schema:
+                datatype: option
+            - name: Owner
+              key: customfield_14862
+              schema:
+                datatype: array
+                items: user
+            - name: Resource Rate - Annotations - Actual
+              key: customfield_14620
+              schema:
+                datatype: object
+            - name: WD Project ID 2
+              key: customfield_14741
+              schema:
+                datatype: string
+            - name: Corporate Risk
+              key: customfield_14980
+              schema:
+                datatype: option
+            - name: Legal Risk
+              key: customfield_14981
+              schema:
+                datatype: option
+            - name: Quality
+              key: customfield_14860
+              schema:
+                datatype: option
+            - name: Client Services Risk
+              key: customfield_14986
+              schema:
+                datatype: option
+            - name: GM Actual %
+              key: customfield_14865
+              schema:
+                datatype: number
+            - name: Resource Type - QA - Actual
+              key: customfield_14623
+              schema:
+                datatype: option
+            - name: WD Project ID 5
+              key: customfield_14744
+              schema:
+                datatype: string
+            - name: Percentage Completion %
+              key: customfield_14866
+              schema:
+                datatype: number
+            - name: Recruitment Risk
+              key: customfield_14987
+              schema:
+                datatype: option
+            - name: Resource Rate - QA - Actual
+              key: customfield_14624
+              schema:
+                datatype: object
+            - name: Contract Value
+              key: customfield_14863
+              schema:
+                datatype: number
+            - name: Languages
+              key: customfield_14500
+              schema:
+                datatype: option
+            - name: RPH - Actual
+              key: customfield_14621
+              schema:
+                datatype: string
+            - name: Solutions Engineering or PSE Risk
+              key: customfield_14984
+              schema:
+                datatype: option
+            - name: WD Project ID 3
+              key: customfield_14742
+              schema:
+                datatype: string
+            - name: External issue ID (C)
+              key: customfield_14501
+              schema:
+                datatype: string
+            - name: GM Budget %
+              key: customfield_14864
+              schema:
+                datatype: number
+            - name: Product Risk
+              key: customfield_14985
+              schema:
+                datatype: option
+            - name: Roster Size - Actual
+              key: customfield_14622
+              schema:
+                datatype: number
+            - name: WD Project ID 4
+              key: customfield_14743
+              schema:
+                datatype: string
+            - name: Dependent Support Function
+              key: customfield_14737
+              schema:
+                datatype: array
+                items: option
+            - name: Proposed Delivery Date - Actual
+              key: customfield_14616
+              schema:
+                datatype: date
+            - name: Set Up and Qualification
+              key: customfield_14858
+              schema:
+                datatype: option
+            - name: Social Impact Risk
+              key: customfield_14979
+              schema:
+                datatype: option
+            - name: Delivery Cadence - Actual
+              key: customfield_14617
+              schema:
+                datatype: string
+            - name: Roster Fill
+              key: customfield_14859
+              schema:
+                datatype: option
+            - name: SWAT Team
+              key: customfield_14738
+              schema:
+                datatype: array
+                items: option
+            - name: Overall Health
+              key: customfield_14856
+              schema:
+                datatype: option
+            - name: PS Billable Hours - Actual
+              key: customfield_14614
+              schema:
+                datatype: number
+            - name: SWAT Team
+              key: customfield_14735
+              schema:
+                datatype: option
+            - name: Team - Production/Productivity
+              key: customfield_14977
+              schema:
+                datatype: option
+            - name: 'Goal Owner '
+              key: customfield_14736
+              schema:
+                datatype: option
+            - name: Last Updated
+              key: customfield_14857
+              schema:
+                datatype: date
+            - name: Quality - Actual
+              key: customfield_14615
+              schema:
+                datatype: string
+            - name: Team - Quality
+              key: customfield_14978
+              schema:
+                datatype: option
+            - name: Re-delivery of Data?
+              key: customfield_14618
+              schema:
+                datatype: option
+            - name: Resource Type - Annotations - Actual
+              key: customfield_14619
+              schema:
+                datatype: option
+            - name: Project - Schedule Health
+              key: customfield_14971
+              schema:
+                datatype: option
+            - name: Recruitment Risk (SQ)
+              key: customfield_14850
+              schema:
+                datatype: number
+            - name: Crowd HR Risk (SQ)
+              key: customfield_14851
+              schema:
+                datatype: number
+            - name: Project - Quality Health
+              key: customfield_14972
+              schema:
+                datatype: option
+            - name: Task
+              key: customfield_14730
+              schema:
+                datatype: string
+            - name: Project - Client Health
+              key: customfield_14970
+              schema:
+                datatype: option
+            - name: Department
+              key: customfield_14733
+              schema:
+                datatype: option
+            - name: Productivity Risk (SQ)
+              key: customfield_14854
+              schema:
+                datatype: number
+            - name: Project Weeks (SQ) - Actual
+              key: customfield_14612
+              schema:
+                datatype: number
+            - name: Team - Setup & Qualification
+              key: customfield_14975
+              schema:
+                datatype: option
+            - name: Client Satisfaction
+              key: customfield_14855
+              schema:
+                datatype: option
+            - name: Kickoff Delay?
+              key: customfield_14613
+              schema:
+                datatype: option
+            - name: Organizations
+              key: customfield_13400
+              schema:
+                datatype: array
+                items: sd-customerorganization
+            - name: Priority Areas
+              key: customfield_14734
+              schema:
+                datatype: array
+                items: option
+            - name: Team - Roster Fill/Recruitment
+              key: customfield_14976
+              schema:
+                datatype: option
+            - name: Cavite Resource Risk (SQ)
+              key: customfield_14852
+              schema:
+                datatype: number
+            - name: GBU Expert
+              key: customfield_14731
+              schema:
+                datatype: array
+                items: user
+            - name: PM Hours (SQ) - Actual
+              key: customfield_14610
+              schema:
+                datatype: number
+            - name: Project - Resourcing Health
+              key: customfield_14973
+              schema:
+                datatype: option
+            - name: Goal
+              key: customfield_14732
+              schema:
+                datatype: string
+            - name: Project - Financial Health
+              key: customfield_14974
+              schema:
+                datatype: option
+            - name: Qualification Risk (SQ)
+              key: customfield_14853
+              schema:
+                datatype: number
+            - name: Specialist Hours (SQ) - Actual
+              key: customfield_14611
+              schema:
+                datatype: number
+            - name: Contributor Incentive $ - Actual
+              key: customfield_14968
+              schema:
+                datatype: number
+            - name: Gross Margin - Technology - Actual
+              key: customfield_14605
+              schema:
+                datatype: string
+            - name: Other (mths)
+              key: customfield_14726
+              schema:
+                datatype: number
+            - name: Sourcing RAG
+              key: customfield_14847
+              schema:
+                datatype: option
+            - name: Current Leads
+              key: customfield_14848
+              schema:
+                datatype: number
+            - name: Gross Margin % - Actual
+              key: customfield_14606
+              schema:
+                datatype: string
+            - name: Project - Overall Health
+              key: customfield_14969
+              schema:
+                datatype: option
+            - name: Contributor Hours - Actual
+              key: customfield_14966
+              schema:
+                datatype: number
+            - name: Other Costs - Actual
+              key: customfield_14603
+              schema:
+                datatype: string
+            - name: UX (mths)
+              key: customfield_14724
+              schema:
+                datatype: number
+            - name: Contributor Incentive $ - Target
+              key: customfield_14967
+              schema:
+                datatype: number
+            - name: Ethnicity
+              key: customfield_14846
+              schema:
+                datatype: array
+                items: option
+            - name: Gross Margin - Labor - Actual
+              key: customfield_14604
+              schema:
+                datatype: string
+            - name: ProjStat
+              key: customfield_14725
+              schema:
+                datatype: option
+            - name: Total Invoice Amount - Actual
+              key: customfield_14609
+              schema:
+                datatype: string
+            - name: Date Updated
+              key: customfield_14849
+              schema:
+                datatype: date
+            - name: Mitigating Action
+              key: customfield_14728
+              schema:
+                datatype: string
+            - name: Total Quoted Price - Labor - Actual
+              key: customfield_14607
+              schema:
+                datatype: string
+            - name: RAG Traffic Lights
+              key: customfield_14729
+              schema:
+                datatype: string
+            - name: Total Quoted Price - Tech - Actual
+              key: customfield_14608
+              schema:
+                datatype: string
+            - name: Quality - Target
+              key: customfield_14960
+              schema:
+                datatype: string
+            - name: Crowd Type - Target
+              key: customfield_14961
+              schema:
+                datatype: option
+            - name: Immediate Action Items for Sourcing
+              key: customfield_14840
+              schema:
+                datatype: string
+            - name: Deliverable
+              key: customfield_14722
+              schema:
+                datatype: string
+            - name: Gender
+              key: customfield_14843
+              schema:
+                datatype: array
+                items: option
+            - name: RPH - Target
+              key: customfield_14964
+              schema:
+                datatype: number
+            - name: Total Direct Cost - Labor - Actual
+              key: customfield_14601
+              schema:
+                datatype: string
+            - name: Age
+              key: customfield_14844
+              schema:
+                datatype: array
+                items: option
+            - name: Contributor Hours - Target
+              key: customfield_14965
+              schema:
+                datatype: number
+            - name: QA (mths)
+              key: customfield_14723
+              schema:
+                datatype: number
+            - name: Total Direct Cost - Tech - Actual
+              key: customfield_14602
+              schema:
+                datatype: string
+            - name: Appen Connect Project URL
+              key: customfield_14841
+              schema:
+                datatype: string
+            - name: Crowd Type - Actual
+              key: customfield_14962
+              schema:
+                datatype: option
+            - name: DevOps (mths)
+              key: customfield_14721
+              schema:
+                datatype: number
+            - name: Roster Size - Target
+              key: customfield_14963
+              schema:
+                datatype: number
+            - name: Other Hours - Actual
+              key: customfield_14957
+              schema:
+                datatype: number
+            - name: Sourcing Turnaround Time
+              key: customfield_14836
+              schema:
+                datatype: date
+            - name: Client Turnaround Time
+              key: customfield_14837
+              schema:
+                datatype: date
+            - name: Timeline Weeks - Target
+              key: customfield_14958
+              schema:
+                datatype: number
+            - name: Immediate Sourcing or Vendor Management Effort Required?
+              key: customfield_14834
+              schema:
+                datatype: option
+            - name: PM Hours - Target
+              key: customfield_14955
+              schema:
+                datatype: number
+            - name: Tags
+              key: customfield_11206
+              schema:
+                datatype: array
+                items: string
+            - name: Other Hours - Target
+              key: customfield_14956
+              schema:
+                datatype: number
+            - name: Recruitment RAG
+              key: customfield_14835
+              schema:
+                datatype: option
+            - name: Services Team
+              key: customfield_11209
+              schema:
+                datatype: option
+            - name: Reason for Inquiry Request
+              key: customfield_14838
+              schema:
+                datatype: option
+            - name: Timeline Weeks - Actual
+              key: customfield_14959
+              schema:
+                datatype: number
+            - name: Request Urgency
+              key: customfield_14839
+              schema:
+                datatype: option
+            - name: Quality Audit Job ID
+              key: customfield_14390
+              schema:
+                datatype: string
+            - name: Project Learnings - Productivity
+              key: customfield_15000
+              schema:
+                datatype: string
+            - name: Project Learnings - Quality
+              key: customfield_15001
+              schema:
+                datatype: string
+            - name: Appen Delivery Team
+              key: customfield_14393
+              schema:
+                datatype: string
+            - name: Quote Tracking
+              key: customfield_15004
+              schema:
+                datatype: option
+            - name: Paid Pilot Contact Amount
+              key: customfield_14279
+              schema:
+                datatype: string
+            - name: Project - Scope Deviation
+              key: customfield_15005
+              schema:
+                datatype: option
+            - name: Paid Pilot Contract Date
+              key: customfield_14276
+              schema:
+                datatype: date
+            - name: Project Learnings - Other
+              key: customfield_15002
+              schema:
+                datatype: string
+            - name: PPR Documents
+              key: customfield_15003
+              schema:
+                datatype: string
+            - name: Paid Pilot Row Amount
+              key: customfield_14277
+              schema:
+                datatype: string
+            - name: Roster Fill Target
+              key: customfield_15008
+              schema:
+                datatype: number
+            - name: Vulnerability Severity
+              key: customfield_15009
+              schema:
+                datatype: option
+            - name: Tool
+              key: customfield_15006
+              schema:
+                datatype: option
+            - name: Productivity Target
+              key: customfield_15007
+              schema:
+                datatype: number
+            - name: Epic Status
+              key: customfield_10902
+              schema:
+                datatype: option
+            - name: Epic Color
+              key: customfield_10903
+              schema:
+                datatype: string
+            - name: Time in Status
+              key: customfield_14260
+              schema:
+                datatype: any
+            - name: Use Case (PSE)
+              key: customfield_14264
+              schema:
+                datatype: array
+                items: option
+            - name: Launched to BPO?
+              key: customfield_14261
+              schema:
+                datatype: array
+                items: option
+            - name: Lost Reason
+              key: customfield_14262
+              schema:
+                datatype: array
+                items: option
+            - name: CSM/AE
+              key: customfield_14388
+              schema:
+                datatype: user
+            - name: PSE Work Needed
+              key: customfield_14267
+              schema:
+                datatype: option
+            - name: Requested Language
+              key: customfield_14389
+              schema:
+                datatype: string
+            - name: Levels
+              key: customfield_14387
+              schema:
+                datatype: option
+            - name: Contract Date
+              key: customfield_14269
+              schema:
+                datatype: date
+            - name: 5-digit Project Number
+              key: customfield_14491
+              schema:
+                datatype: string
+            - name: Management Plan
+              key: customfield_14494
+              schema:
+                datatype: string
+            - name: Severity/Impact
+              key: customfield_14495
+              schema:
+                datatype: option
+            - name: Cause
+              key: customfield_14492
+              schema:
+                datatype: string
+            - name: 'Volume - Judgments '
+              key: customfield_14250
+              schema:
+                datatype: number
+            - name: Impacted
+              key: customfield_14493
+              schema:
+                datatype: string
+            - name: Due (FTH)
+              key: customfield_14498
+              schema:
+                datatype: datetime
+            - name: Previous / Related Job Ids
+              key: customfield_14256
+              schema:
+                datatype: string
+            - name: Category
+              key: customfield_14499
+              schema:
+                datatype: option
+            - name: Running Job(s) Title
+              key: customfield_14257
+              schema:
+                datatype: string
+            - name: Task Number
+              key: customfield_14496
+              schema:
+                datatype: number
+            - name: Workday ProjNo
+              key: customfield_14497
+              schema:
+                datatype: string
+            - name: Pay per Judgment in Cents
+              key: customfield_14258
+              schema:
+                datatype: number
+            - name: Comments for Partner
+              key: customfield_14259
+              schema:
+                datatype: string
+            - name: Description (AIST)
+              key: customfield_14480
+              schema:
+                datatype: string
+            - name: Handover Documents
+              key: customfield_14483
+              schema:
+                datatype: string
+            - name: Expected Close Date
+              key: customfield_14484
+              schema:
+                datatype: date
+            - name: Job ID
+              key: customfield_14363
+              schema:
+                datatype: string
+            - name: Pilot Job ID's
+              key: customfield_14000
+              schema:
+                datatype: string
+            - name: Impact (AIST)
+              key: customfield_14481
+              schema:
+                datatype: option
+            - name: Request Type
+              key: customfield_14361
+              schema:
+                datatype: option
+            - name: Resources (AIST)
+              key: customfield_14482
+              schema:
+                datatype: option
+            - name: PM Lead
+              key: customfield_14487
+              schema:
+                datatype: user
+            - name: Reviews Needed
+              key: customfield_14488
+              schema:
+                datatype: array
+                items: option
+            - name: Payment Job ID
+              key: customfield_14364
+              schema:
+                datatype: string
+            - name: Stage (SQ)
+              key: customfield_14485
+              schema:
+                datatype: option
+            - name: Forecast Category/Percentage
+              key: customfield_14486
+              schema:
+                datatype: option
+            - name: Project Number
+              key: customfield_14365
+              schema:
+                datatype: string
+            - name: Expected Monthly Volume
+              key: customfield_14249
+              schema:
+                datatype: number
+            - name: Category
+              key: customfield_14489
+              schema:
+                datatype: option
+            - name: Expected Contract Date
+              key: customfield_14247
+              schema:
+                datatype: date
+            - name: Expected Pilot Start Date
+              key: customfield_14248
+              schema:
+                datatype: date
+            - name: Delivery Confidence
+              key: customfield_14472
+              schema:
+                datatype: option
+            - name: Target Language
+              key: customfield_14351
+              schema:
+                datatype: string
+            - name: Technical Hand-off
+              key: customfield_14593
+              schema:
+                datatype: string
+            - name: Revenue Score
+              key: customfield_14594
+              schema:
+                datatype: option
+            - name: Total Quoted Price - Labor + Tech
+              key: customfield_14473
+              schema:
+                datatype: string
+            - name: Opportunity Currency
+              key: customfield_14470
+              schema:
+                datatype: option
+            - name: Use-case Taxonomy Test
+              key: customfield_14591
+              schema:
+                datatype: object
+            - name: Delivery Target (Qtr)
+              key: customfield_14471
+              schema:
+                datatype: option
+            - name: Source Language
+              key: customfield_14350
+              schema:
+                datatype: string
+            - name: Strategic Customer PM
+              key: customfield_14592
+              schema:
+                datatype: option
+            - name: Margin Improvement Score
+              key: customfield_14597
+              schema:
+                datatype: option
+            - name: Total Direct Cost - Labor + Tech
+              key: customfield_14476
+              schema:
+                datatype: string
+            - name: Baseline Delivery Target (Month)
+              key: customfield_14477
+              schema:
+                datatype: option
+            - name: NPS Score Factor
+              key: customfield_14598
+              schema:
+                datatype: option
+            - name: Delivery Target (Month)
+              key: customfield_14474
+              schema:
+                datatype: option
+            - name: Diversification Score
+              key: customfield_14595
+              schema:
+                datatype: option
+            - name: Word Count
+              key: customfield_14353
+              schema:
+                datatype: number
+            - name: Gross Margin - Labor + Tech
+              key: customfield_14475
+              schema:
+                datatype: string
+            - name: Product Priority Score
+              key: customfield_14596
+              schema:
+                datatype: number
+            - name: Falcon Quote Summary
+              key: customfield_14478
+              schema:
+                datatype: string
+            - name: Executive Quote Summary
+              key: customfield_14479
+              schema:
+                datatype: string
+            - name: PSE/SE
+              key: customfield_14358
+              schema:
+                datatype: user
+            - name: Total Quoted Price - Labor
+              key: customfield_14461
+              schema:
+                datatype: string
+            - name: Total Quoted Price - Tech
+              key: customfield_14462
+              schema:
+                datatype: string
+            - name: Gross Margin - Technology
+              key: customfield_14460
+              schema:
+                datatype: string
+            - name: Sales Areas
+              key: customfield_14465
+              schema:
+                datatype: array
+                items: option
+            - name: Package Type
+              key: customfield_14466
+              schema:
+                datatype: array
+                items: option
+            - name: Project Languages (SQ)
+              key: customfield_14463
+              schema:
+                datatype: array
+                items: option
+            - name: Sales Theater
+              key: customfield_14464
+              schema:
+                datatype: array
+                items: option
+            - name: Other Costs
+              key: customfield_14469
+              schema:
+                datatype: string
+            - name: Competition (SQ)
+              key: customfield_14467
+              schema:
+                datatype: string
+            - name: Company size
+              key: customfield_14571
+              schema:
+                datatype: option
+            - name: Product Owner
+              key: customfield_14692
+              schema:
+                datatype: user
+            - name: Eng Lead
+              key: customfield_14693
+              schema:
+                datatype: user
+            - name: Website
+              key: customfield_14572
+              schema:
+                datatype: string
+            - name: Business Unit
+              key: customfield_14690
+              schema:
+                datatype: option
+            - name: Assessed Risk
+              key: customfield_14570
+              schema:
+                datatype: option
+            - name: Business Lead
+              key: customfield_14691
+              schema:
+                datatype: user
+            - name: Volume - Rows
+              key: customfield_14212
+              schema:
+                datatype: number
+            - name: Approvals
+              key: customfield_13000
+              schema:
+                datatype: sd-approvals
+            - name: MoSCoW Prioritization
+              key: customfield_14697
+              schema:
+                datatype: string
+            - name: Running Job ID
+              key: customfield_14213
+              schema:
+                datatype: string
+            - name: Email
+              key: customfield_14573
+              schema:
+                datatype: string
+            - name: Sample Job ID(s)
+              key: customfield_14210
+              schema:
+                datatype: string
+            - name: Phone number
+              key: customfield_14574
+              schema:
+                datatype: string
+            - name: Why BPO
+              key: customfield_14211
+              schema:
+                datatype: array
+                items: option
+            - name: Total Direct Cost - Technology
+              key: customfield_14458
+              schema:
+                datatype: string
+            - name: Gross Margin - Labor
+              key: customfield_14459
+              schema:
+                datatype: string
+            - name: Project Engagement Type (BPO)
+              key: customfield_14456
+              schema:
+                datatype: option
+            - name: Total Direct Cost - Labor
+              key: customfield_14457
+              schema:
+                datatype: string
+            - name: Job Type
+              key: customfield_14209
+              schema:
+                datatype: option
+            - name: Issue color
+              key: customfield_14328
+              schema:
+                datatype: string
+            - name: Estimated End Date
+              key: customfield_14329
+              schema:
+                datatype: date
+            - name: Estimated Time Per Row
+              key: customfield_14208
+              schema:
+                datatype: number
+            - name: Reporting Request Type
+              key: customfield_14681
+              schema:
+                datatype: array
+                items: option
+            - name: Impacted BU
+              key: customfield_14680
+              schema:
+                datatype: array
+                items: option
+            - name: AE
+              key: customfield_14201
+              schema:
+                datatype: user
+            - name: Customer Commentary (If Available)
+              key: customfield_14564
+              schema:
+                datatype: string
+            - name: Delivery Date
+              key: customfield_14686
+              schema:
+                datatype: date
+            - name: Requester Type
+              key: customfield_14565
+              schema:
+                datatype: option
+            - name: SE Lead
+              key: customfield_14202
+              schema:
+                datatype: user
+            - name: Cycle Time
+              key: customfield_14683
+              schema:
+                datatype: string
+            - name: Problem Being Solved
+              key: customfield_14562
+              schema:
+                datatype: string
+            - name: Source
+              key: customfield_14320
+              schema:
+                datatype: option
+            - name: Channel Partner
+              key: customfield_14200
+              schema:
+                datatype: option
+            - name: Days in workflow
+              key: customfield_14684
+              schema:
+                datatype: number
+            - name: Investigation reason
+              key: customfield_14321
+              schema:
+                datatype: option
+            - name: Classification of Work
+              key: customfield_14689
+              schema:
+                datatype: option
+            - name: Overall Expected Volume
+              key: customfield_14205
+              schema:
+                datatype: number
+            - name: Responsible PM
+              key: customfield_14568
+              schema:
+                datatype: user
+            - name: Customer Name (Please avoid code name)
+              key: customfield_14569
+              schema:
+                datatype: string
+            - name: Timeline
+              key: customfield_14206
+              schema:
+                datatype: date
+            - name: Customer Code Name
+              key: customfield_14203
+              schema:
+                datatype: string
+            - name: Strategy
+              key: customfield_14687
+              schema:
+                datatype: option
+            - name: Time to close after resolution
+              key: customfield_14324
+              schema:
+                datatype: sd-servicelevelagreement
+            - name: Version / Release
+              key: customfield_14566
+              schema:
+                datatype: version
+            - name: ARR
+              key: customfield_14204
+              schema:
+                datatype: number
+            - name: T-shirt Size Estimate
+              key: customfield_14567
+              schema:
+                datatype: option
+            - name: Time to approve normal change
+              key: customfield_14325
+              schema:
+                datatype: sd-servicelevelagreement
+            - name: Product Area & Responsible Product Manager
+              key: customfield_14559
+              schema:
+                datatype: option-with-child
+    types:
+        - id: "11608"
+          name: Initiative
+          handle: Initiative
+          subtask: false
+        - id: "5"
+          name: Epic
+          handle: Epic
+          subtask: false
+        - id: "6"
+          name: Story
+          handle: Story
+          subtask: false
+        - id: "11410"
+          name: Spike
+          handle: Spike
+          subtask: false
+        - id: "1"
+          name: Bug
+          handle: Bug
+          subtask: false
+        - id: "11579"
+          name: Tech Debt
+          handle: Tech Debt
+          subtask: false
+        - id: "11588"
+          name: Process Improvement
+          handle: Process Improvement
+          subtask: false
+        - id: "11598"
+          name: Security Risk
+          handle: Security Risk
+          subtask: false
+        - id: "11590"
+          name: Test - Manual
+          handle: Test - Manual
+          subtask: true
+        - id: "11591"
+          name: Test - Automated
+          handle: Test - Automated
+          subtask: true
+        - id: "11607"
+          name: Defect
+          handle: Defect
+          subtask: true
+        - id: "11597"
+          name: Post Mortem
+          handle: Post Mortem
+          subtask: true
+        - id: "11609"
+          name: Front End Subtask
+          handle: Front End Subtask
+          subtask: true
+        - id: "11627"
+          name: Back End Subtask
+          handle: Back End Subtask
+          subtask: true
+        - id: "11624"
+          name: UX Subtask
+          handle: UX Subtask
+          subtask: true
+        - id: "11625"
+          name: DevOps Subtask
+          handle: DevOps Subtask
+          subtask: true
+        - id: "10000"
+          name: Sub-Task
+          handle: Sub-Task
+          subtask: true
+login: rmcclain@appen.com
+project:
+    key: ADAP
+    type: classic
+server: https://appen.atlassian.net

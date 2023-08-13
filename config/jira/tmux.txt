@@ -1,0 +1,4 @@
+My Unresolved | jira issues list -s~Done -q="assignee='rmcclain@appen.com' AND project IS NOT EMPTY"
+Created by me | jira issues list -s~Done -q="creator='rmcclain@appen.com' AND project IS NOT EMPTY"
+Stability Sprint | jira sprint list -s~Done --current
+DEVEX | jira issues list -p DEVEX -s~Done 

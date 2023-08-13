@@ -1,0 +1,4 @@
+#!/bin/bash
+curl https://calendar.google.com/calendar/ical/ron.mcclain%40crowdflower.com/private-e39c63827e60e9e5a6f96ea9fa5b02e3/basic.ics > basic.ics
+calcurse -i basic.ics
+

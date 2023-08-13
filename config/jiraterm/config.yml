@@ -1,0 +1,9 @@
+endpoint: https://appen.atlassian.net
+email: rmcclain@appen.com
+api_key: 73gVgaj3zemU8y4ofGENFA15
+
+queries:
+  - name: My Work
+    query: resolution = unresolved and assignee=currentuser() ORDER BY priority asc, created
+  - name: All Unresolved
+    query: resolution = unresolved ORDER BY priority asc, created

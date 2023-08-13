@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+branch=$(git symbolic-ref --short HEAD)
+if [[ $branch =~ ([[:alpha:]]+-[[:digit:]]+) ]]; then
+  open https://appen.atlassian.net/browse/$BASH_REMATCH
+fi

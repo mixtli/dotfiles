@@ -23,6 +23,7 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
 export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"

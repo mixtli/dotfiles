@@ -154,7 +154,7 @@ return {
         custom = {},
       },
       git = {
-        enable = false,
+        enable = true,
         ignore = true,
         timeout = 1000,
       },

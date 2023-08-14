@@ -107,11 +107,10 @@ local mappings = {
     t = { "<cmd>ChatGPTRun add_tests<cr>", "Add Tests"},
     x = { "<cmd>ChatGPTRun explain_code<cr>", "Explain Code"}
   },
-  b = {
+  b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Switch Buffer" },
+
+  B = {
     name = "Buffers",
-    l = {
-      "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-      "Switch Buffer" },
     d = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   },
   c = {
@@ -237,7 +236,7 @@ local mappings = {
     [">"] = { "<cmd>diffget REMOTE<cr>", "Use Remote"},
     ["<"] = { "<cmd>diffget LOCAL<cr>", "Use Local" }
   },
-  -- P = { "<cmd>Telescope projects<cr>", "Projects" },
+  K = { "<cmd>DevdocsOpenFloat<cr>", "DevDocs"},
   l = {
     name = "LSP",
     a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },

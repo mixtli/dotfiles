@@ -15,7 +15,7 @@ return {
   -- Colorschemes
   "lunarvim/darkplus.nvim",
   "navarasu/onedark.nvim",
-  "morhetz/gruvbox",
+  "ellisonleao/gruvbox.nvim",
   -- cmp plugins
   "hrsh7th/nvim-cmp", -- The completion plugin
   "hrsh7th/cmp-buffer", -- buffer completions

@@ -4,6 +4,9 @@ window:
     columns: 120
     lines: 50
 
+import:
+ - ~/.config/alacritty/themes/themes/nightfox.yaml
+
 # Font config:
 font:
     # Normal (roman):

@@ -17,3 +17,4 @@ config/.config/cache
 cache
 config/local/share
 config/tmux/plugins
+config/gcloud

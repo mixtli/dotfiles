@@ -9,6 +9,5 @@ return {
         null_ls.builtins.formatting.black
       }
     })
-
   end
 }

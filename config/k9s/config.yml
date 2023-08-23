@@ -48,7 +48,7 @@ k9s:
         - rmcclain3
         - default
       view:
-        active: po
+        active: pods
       featureGates:
         nodeShell: false
       shellPod:

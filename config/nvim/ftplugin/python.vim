@@ -1,1 +1,1 @@
-nnoremap <localleader>k :DevdocsOpenFloat python-3.10<cr>
+" nnoremap <localleader>k :DevdocsOpenFloat python-3.10<cr>

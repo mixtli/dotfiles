@@ -1,4 +1,3 @@
-
 local function open_nvim_tree(data)
 
   -- buffer is a directory
@@ -86,16 +85,16 @@ end
 return {
   "nvim-tree/nvim-tree.lua",
   config = function()
-    local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-    if not config_status_ok then
-      return
-    end
+    -- local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
+    -- if not config_status_ok then
+    --   return
+    -- end
 
-    local tree_cb = nvim_tree_config.nvim_tree_callback
+    -- local tree_cb = nvim_tree_config.nvim_tree_callback
     vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
     require('nvim-tree').setup({
       on_attach = on_attach,
-      disable_netrw = false,
+      disable_netrw = true,
       hijack_netrw = true,
       hijack_cursor = false,
       update_cwd = true,
@@ -172,5 +171,3 @@ return {
     })
   end
 }
-
-

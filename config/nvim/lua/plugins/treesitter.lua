@@ -12,6 +12,9 @@ return {
       ensure_installed = { "c", "lua", "vim", "vimdoc", "python", "html", "ruby" },
       sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
       ignore_install = { "" }, -- List of parsers to ignore installing
+      endwise = {
+          enable = true,
+      },
       autopairs = {
         enable = true,
       },

@@ -18,3 +18,4 @@ cache
 config/local/share
 config/tmux/plugins
 config/gcloud
+config/zsh/.zsh_sessions

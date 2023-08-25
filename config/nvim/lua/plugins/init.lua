@@ -61,6 +61,11 @@ return {
   -- Java
   'mfussenegger/nvim-jdtls',
 
+  -- Ruby
+  'RRethy/nvim-treesitter-endwise',
+  'vim-ruby/vim-ruby',
+  'tpope/vim-rails',
+
   -- Debugging
   'mfussenegger/nvim-dap',
   'rcarriga/nvim-dap-ui',

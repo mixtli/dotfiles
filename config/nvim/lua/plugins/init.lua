@@ -36,7 +36,7 @@ return {
 -- { "aserowy/tmux.nvim", branch='main'},
 
   -- 'tpope/vim-commentary',
-
+  -- 'knubie/vim-kitty-navigator',
   'christoomey/vim-tmux-navigator',
   'christoomey/vim-tmux-runner',
   'sbdchd/vim-run',
@@ -68,7 +68,6 @@ return {
 
   -- Debugging
   'mfussenegger/nvim-dap',
-  'rcarriga/nvim-dap-ui',
   'nvim-telescope/telescope-dap.nvim',
   'theHamsta/nvim-dap-virtual-text',
   'mfussenegger/nvim-dap-python',

@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+#export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -81,7 +81,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git vi-mode z zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
-plugins=(git z vi-mode fzf-tab zsh-autosuggestions zsh-syntax-highlighting kube-ps1 kubectl)
+plugins=(git z vi-mode fzf-tab zsh-autosuggestions zsh-syntax-highlighting kube-ps1 kubectl zsh-fzf-history-search)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -128,11 +128,10 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 alias dc=docker-compose
 alias ls=lsd
 
-source ~/.config/zsh/.zsh/ruby.zsh
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 
 
-for file in ~/.config/zsh/.zsh/*.zsh; do
+for file in ~/.config/zsh/autoload/*.zsh; do
     source "$file"
 done
 

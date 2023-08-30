@@ -10,9 +10,9 @@ config/.config/zsh/.zsh_history
 
 .zsh_history
 tags
-config/.config/local
-config/.config/zsh/.zcompdump*
-config/.config/cache
+config/local
+config/zsh/.zcompdump*
+config/cache
 
 cache
 config/local/share

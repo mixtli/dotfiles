@@ -81,7 +81,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git vi-mode z zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
-plugins=(git z vi-mode fzf-tab zsh-autosuggestions zsh-syntax-highlighting kube-ps1 kubectl zsh-fzf-history-search)
+plugins=(git z vi-mode zsh-autosuggestions fzf-tab zsh-syntax-highlighting kube-ps1 kubectl zsh-fzf-history-search)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -172,3 +172,12 @@ export PATH="$PATH:/opt/homebrew/Cellar/haskell-language-server/2.0.0.1/bin"
 export PIPENV_VENV_IN_PROJECT=1
 
 alias ctags="`brew --prefix`/bin/ctags"
+
+# The following lines were added by compinstall
+
+#zstyle ':completion:*' completer _complete _ignored _approximate
+#zstyle :compinstall filename '/Users/rmcclain/.config/zsh/.zshrc'
+
+#autoload -Uz compinit
+#compinit
+# End of lines added by compinstall

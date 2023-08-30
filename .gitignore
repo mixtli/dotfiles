@@ -3,10 +3,10 @@ config/.config/nvim/.config/nvim/autoload/plugged/*
 mutt/.mutt
 __pycache__
 .DS_Store
-config/.config/zsh/.zsh/appen.zsh
-config/.config/gcloud/*
+config/zsh/.zsh/appen.zsh
+config/gcloud/*
 **/*.log
-config/.config/zsh/.zsh_history
+config/zsh/.zsh_history
 
 .zsh_history
 tags

@@ -171,3 +171,4 @@ export PATH="$PATH:/opt/homebrew/Cellar/haskell-language-server/2.0.0.1/bin"
 
 export PIPENV_VENV_IN_PROJECT=1
 
+alias ctags="`brew --prefix`/bin/ctags"

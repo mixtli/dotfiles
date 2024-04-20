@@ -80,8 +80,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git vi-mode z zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
-plugins=(git z vi-mode fzf-tab zsh-autosuggestions zsh-syntax-highlighting kube-ps1 kubectl)
+#plugins=(git vi-mode fzf-tab z zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
+plugins=(git z vi-mode zsh-autosuggestions zsh-syntax-highlighting kube-ps1 kubectl)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -173,3 +173,10 @@ export PATH="$PATH:/opt/homebrew/Cellar/haskell-language-server/2.0.0.1/bin"
 export PIPENV_VENV_IN_PROJECT=1
 
 alias ctags="`brew --prefix`/bin/ctags"
+
+export BAT_THEME=tokyonight_night
+
+# ---- Zoxide (better cd) ----
+eval "$(zoxide init zsh)"
+
+eval $(thefuck --alias)

@@ -14,7 +14,7 @@ return {
   'sindrets/diffview.nvim',
   -- Colorschemes
   "lunarvim/darkplus.nvim",
-  "navarasu/onedark.nvim",
+  -- "navarasu/onedark.nvim",
   "ellisonleao/gruvbox.nvim",
   -- cmp plugins
   "hrsh7th/nvim-cmp", -- The completion plugin
@@ -26,7 +26,7 @@ return {
   -- snippets
   "L3MON4D3/LuaSnip", --snippet engine
   "rafamadriz/friendly-snippets", -- a bunch of snippets to use
-
+  'ianding1/leetcode.vim',
   -- Testing 
   'vim-test/vim-test',
   'tpope/vim-dispatch',

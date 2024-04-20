@@ -15,6 +15,7 @@ require "user.devspace"
 
 
 -- vim.cmd 'source ~/.config/nvim/lua/user/vimade.vim'
+vim.cmd 'source ~/.config/nvim/vimscript/settings.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/close_tag.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/fzf.vim'
 vim.cmd 'source ~/.config/nvim/vimscript/test.vim'

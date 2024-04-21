@@ -12,13 +12,6 @@ web:*.{html,css,js}*
 # Using glob patterns to include/exclude files or folders
 --glob=!.git/*
 
-<<<<<<< HEAD
-=======
-# or
---glob
-!.git/*
-
->>>>>>> a41b2918f4edfd267b55592085d6399435b4f8e9
 # Set the colors.
 --colors=line:none
 --colors=line:style:bold

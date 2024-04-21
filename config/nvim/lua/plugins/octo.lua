@@ -8,6 +8,9 @@ return {
   config = function ()
     require"octo".setup({
       use_local_fs = false,                    -- use local files on right side of reviews
+      suppress_missing_scope = {
+        projects_v2 = true,
+      },
       enable_builtin = false,
     })
   end

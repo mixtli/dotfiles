@@ -159,7 +159,6 @@ return {
       },
       view = {
         width = 30,
-        hide_root_folder = false,
         side = "left",
         number = false,
         relativenumber = false,

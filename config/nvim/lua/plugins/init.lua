@@ -7,9 +7,9 @@ return {
   'weirongxu/plantuml-previewer.vim',
   "moll/vim-bbye",
   'kdheepak/lazygit.nvim',
-  "lukas-reineke/indent-blankline.nvim",
   "antoinemadec/FixCursorHold.nvim", -- This is needed to fix lsp doc highlight
   "tpope/vim-unimpaired",
+  "nvim-neotest/nvim-nio",
   'ludovicchabant/vim-gutentags',
   'sindrets/diffview.nvim',
   -- Colorschemes

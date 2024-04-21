@@ -32,11 +32,7 @@ return {
           node_decremental = "gnm",
         },
       },
-      indent = { enable = true, disable = { "yaml" } },
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
+      indent = { enable = true, disable = { "yaml" } }
     }
   end
 }

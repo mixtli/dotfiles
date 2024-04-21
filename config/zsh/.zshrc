@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+#export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -80,8 +80,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+<<<<<<< HEAD
 #plugins=(git vi-mode fzf-tab z zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
 plugins=(git z vi-mode zsh-autosuggestions zsh-syntax-highlighting kube-ps1 kubectl)
+=======
+#plugins=(git vi-mode z zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
+plugins=(git z vi-mode zsh-autosuggestions fzf-tab zsh-syntax-highlighting kube-ps1 kubectl zsh-fzf-history-search)
+>>>>>>> a41b2918f4edfd267b55592085d6399435b4f8e9
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -128,11 +133,10 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 alias dc=docker-compose
 alias ls=lsd
 
-source ~/.config/zsh/.zsh/ruby.zsh
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 
 
-for file in ~/.config/zsh/.zsh/*.zsh; do
+for file in ~/.config/zsh/autoload/*.zsh; do
     source "$file"
 done
 
@@ -174,9 +178,20 @@ export PIPENV_VENV_IN_PROJECT=1
 
 alias ctags="`brew --prefix`/bin/ctags"
 
+<<<<<<< HEAD
 export BAT_THEME=tokyonight_night
 
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 
 eval $(thefuck --alias)
+=======
+# The following lines were added by compinstall
+
+#zstyle ':completion:*' completer _complete _ignored _approximate
+#zstyle :compinstall filename '/Users/rmcclain/.config/zsh/.zshrc'
+
+#autoload -Uz compinit
+#compinit
+# End of lines added by compinstall
+>>>>>>> a41b2918f4edfd267b55592085d6399435b4f8e9

@@ -12,7 +12,6 @@ config/zsh/.zsh_history
 tags
 config/local
 config/zsh/.zcompdump*
-config/zsh/.zcompdump*
 config/cache
 
 cache

@@ -6,7 +6,7 @@ export DISABLE_SPRING=1
 #  eval "$(pyenv init -)"
 #fi
 
-export PYTHONPATH=src
+#export PYTHONPATH=src
 export PATH=$PATH:/usr/local/bin
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
@@ -25,8 +25,9 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
-export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_DATA_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/.ripgreprc"
@@ -40,4 +41,4 @@ export VISUAL="nvim"
 export HISTFILE="$XDG_DATA_HOME/.zhistory"    # History filepath
 export HISTSIZE=10000                   # Maximum events for internal history
 export SAVEHIST=10000                   # Maximum events in history file
-
+export AICHAT_CONFIG_DIR=$HOME/.config/aichat

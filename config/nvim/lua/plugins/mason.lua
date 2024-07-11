@@ -1,15 +1,25 @@
 return {
-  "williamboman/mason.nvim",
-  config = function()
-    require('mason').setup({
-      ensure_installed = {
-        "autoflake",
-        "black",
-        "mypy",
-        "ruff",
-        "pyright",
-        "debugpy"
-      }
-    })
-  end
+	"williamboman/mason.nvim",
+	opts = {
+		ensure_installed = {
+			"autoflake",
+			"black",
+			"mypy",
+			"ruff",
+			"pyright",
+			"debugpy",
+			"jdtls",
+			"gopls",
+			"gradle_ls",
+			"groovyls",
+			"lua_ls",
+			"bashls",
+			"html",
+			"cssls",
+			"jsonls",
+			"emmet-language-server",
+			"typescript-language-server",
+			"prettier",
+		},
+	},
 }

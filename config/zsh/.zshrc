@@ -81,7 +81,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git vi-mode fzf-tab z zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
-plugins=(git z vi-mode zsh-autosuggestions zsh-syntax-highlighting kube-ps1 kubectl)
+plugins=(git vi-mode zsh-autosuggestions zsh-syntax-highlighting kube-ps1 kubectl)
 #plugins=(git vi-mode z zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
 #plugins=(git z vi-mode zsh-autosuggestions fzf-tab zsh-syntax-highlighting kube-ps1 kubectl zsh-fzf-history-search)
 source $ZSH/oh-my-zsh.sh
@@ -167,7 +167,7 @@ export JAVA_HOME=/usr/local/opt/openjdk@17
 export DEVSPACE_SUBDOMAIN=eng03
 #export PYENV_ROOT="$HOME/.pyenv"
 #command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
+eval "$(pyenv init -)"
 export PATH="/opt/homebrew/opt/sphinx-doc/bin:$PATH"
 export PATH="$PATH:/opt/homebrew/Cellar/haskell-language-server/2.0.0.1/bin"
 
@@ -178,7 +178,7 @@ alias ctags="`brew --prefix`/bin/ctags"
 export BAT_THEME=tokyonight_night
 
 # ---- Zoxide (better cd) ----
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 eval $(thefuck --alias)
 # The following lines were added by compinstall
@@ -189,3 +189,11 @@ eval $(thefuck --alias)
 #autoload -Uz compinit
 #compinit
 # End of lines added by compinstall
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+eval "$(direnv hook zsh)"
+

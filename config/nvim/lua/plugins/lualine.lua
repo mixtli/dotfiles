@@ -16,7 +16,7 @@ local diff = {
 	"diff",
 	colored = false,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+	cond = hide_in_width,
 }
 
 local mode = {
@@ -57,65 +57,69 @@ local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
-
 return {
-  "nvim-lualine/lualine.nvim",
-  dependencies = { "otavioschwanck/tmux-awesome-manager.nvim" },
-  config = {
-    options = {
-      icons_enabled = true,
-      theme = "auto",
-      component_separators = { left = "", right = "" },
-      section_separators = { left = "", right = "" },
-      disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline",
-        "dapui_watches", "dapui_breakpoints",
-        "dapui_scopes", "dapui_console",
-        "dapui_stacks", "dap-repl"
-      },
-      always_divide_middle = true,
-      globalstatus = true
-    },
-    sections = {
-      lualine_a = { branch, diagnostics },
-      --lualine_b = { mode },
-      lualine_b = { require('auto-session.lib').current_session_name},
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "otavioschwanck/tmux-awesome-manager.nvim" },
+	opts = {
+		icons_enabled = true,
+		theme = "auto",
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
+		disabled_filetypes = {
+			"alpha",
+			"dashboard",
+			"NvimTree",
+			"Outline",
+			"dapui_watches",
+			"dapui_breakpoints",
+			"dapui_scopes",
+			"dapui_console",
+			"dapui_stacks",
+			"dap-repl",
+		},
+		always_divide_middle = true,
+		globalstatus = true,
+		sections = {
+			lualine_a = { branch, diagnostics },
+			--lualine_b = { mode },
+			-- lualine_b = { require("auto-session.lib").current_session_name },
 
-      lualine_c = {
-        function()
-          return require('tmux-awesome-manager.src.integrations.status').open_terms()
-        end
-      },
-      -- lualine_x = { "encoding", "fileformat", "filetype" },
-      lualine_x = { diff, spaces, "encoding", filetype },
-      lualine_y = { location },
-      lualine_z = { progress },
-    },
-    winbar = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = {{'filename', color = { fg = '#55aa88', bg = 'lightgrey', gui='italic,bold' }}},
-      lualine_x = {},
-      lualine_y = {},
-      lualine_z = {}
-    },
+			lualine_c = {
+				function()
+					return require("tmux-awesome-manager.src.integrations.status").open_terms()
+				end,
+			},
+			-- lualine_x = { "encoding", "fileformat", "filetype" },
+			lualine_x = { diff, spaces, "encoding", filetype },
+			lualine_y = { location },
+			lualine_z = { progress },
+		},
+		winbar = {
+			lualine_a = {},
+			lualine_b = {},
+			lualine_c = { { "filename", color = { fg = "#55aa88", bg = "lightgrey", gui = "italic,bold" } } },
+			lualine_x = {},
+			lualine_y = {},
+			lualine_z = {},
+		},
 
-    inactive_winbar = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = {{'filename', color = { fg = '#ffaa88', bg = 'grey', gui='italic,bold' }}},
-      lualine_x = {},
-      lualine_y = {},
-      lualine_z = {}
-    },
-    inactive_sections = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = { "filename"},
-      lualine_x = { "location" },
-      lualine_y = {},
-      lualine_z = {},
-    },
-    tabline = {},
-    extensions = {},
-  }
+		inactive_winbar = {
+			lualine_a = {},
+			lualine_b = {},
+			lualine_c = { { "filename", color = { fg = "#ffaa88", bg = "grey", gui = "italic,bold" } } },
+			lualine_x = {},
+			lualine_y = {},
+			lualine_z = {},
+		},
+		inactive_sections = {
+			lualine_a = {},
+			lualine_b = {},
+			lualine_c = { "filename" },
+			lualine_x = { "location" },
+			lualine_y = {},
+			lualine_z = {},
+		},
+		tabline = {},
+		extensions = {},
+	},
 }

@@ -49,7 +49,7 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>gv=gv",opts)
+keymap("v", "<A-j>", ":m .+1<CR>gv=gv", opts)
 keymap("v", "<A-k>", ":m .-2<CR>gv=gv", opts)
 keymap("v", "p", '"_dP', opts)
 
@@ -60,7 +60,16 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
-keymap("n", "<C-f>", ":lua require('telescope.builtin').find_files({hidden = true, find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden', config_dir }}, require('telescope.themes').get_dropdown{previewer = false})<cr>", opts)
+keymap("n", "-", ":lua MiniFiles.open()<cr>", opts)
+
+keymap("n", [[<C-p>]], ":ToggleTerm direction=float<cr>", opts)
+
+keymap(
+	"n",
+	"<C-f>",
+	":lua require('telescope.builtin').find_files({hidden = true, find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden', config_dir }}, require('telescope.themes').get_dropdown{previewer = false})<cr>",
+	opts
+)
 
 -- Terminal --
 -- Better terminal navigation
@@ -69,7 +78,6 @@ keymap("n", "<C-f>", ":lua require('telescope.builtin').find_files({hidden = tru
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-
 -- local keymap = vim.keymap.set
 
 -- LSP finder - Find the symbol's definition
@@ -77,7 +85,6 @@ keymap("n", "<C-f>", ":lua require('telescope.builtin').find_files({hidden = tru
 -- When you use an action in finder like "open vsplit",
 -- you can use <C-t> to jump back
 -- keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
-
 
 -- Rename all occurrences of the hovered word for the entire file
 -- keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
@@ -105,8 +112,6 @@ keymap("n", "<C-f>", ":lua require('telescope.builtin').find_files({hidden = tru
 -- Go to type definition
 -- keymap("n","gt", "<cmd>Lspsaga goto_type_definition<CR>")
 
-
-
 -- Diagnostic jump
 -- You can use <C-o> to jump back to your previous location
 -- keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
@@ -120,8 +125,6 @@ keymap("n", "<C-f>", ":lua require('telescope.builtin').find_files({hidden = tru
 --  require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
 -- end)
 
-
-
 -- If you want to keep the hover window in the top right hand corner,
 -- you can pass the ++keep argument
 -- Note that if you use hover with ++keep, pressing this key again will
@@ -132,27 +135,25 @@ keymap("n", "<C-f>", ":lua require('telescope.builtin').find_files({hidden = tru
 -- keymap("n", ">>", ":diffget //2<cr>")
 -- keymap("n", "<<", ":diffget //3<cr>")
 
-
-vim.cmd [[
-"-- Additional keymaps for java jdtls 
+vim.cmd([[
+"-- Additional keymaps for java jdtls
 nnoremap <A-o> <Cmd>lua require('jdtls').organize_imports()<CR>
 " nnoremap crv <Cmd>lua require('jdtls').extract_variable()<CR>
 vnoremap crv <Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>
 " nnoremap crc <Cmd>lua require('jdtls').extract_constant()<CR>
 vnoremap crc <Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>
 vnoremap crm <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
-]]
-
+]])
 
 -- If using nvim-dap
 -- This requires java-debug and vscode-java-test bundles, see install steps in this README further below.
 -- nnoremap <leader>df <Cmd>lua require'jdtls'.test_class()<CR>
 -- nnoremap <leader>dn <Cmd>lua require'jdtls'.test_nearest_method()<CR>
 vim.keymap.set("i", "<C-H>", function()
-  require("copilot.suggestion").accept()
-  -- Put cursor on next line.
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Enter>", true, false, true), "n", false)
+	require("copilot.suggestion").accept()
+	-- Put cursor on next line.
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Enter>", true, false, true), "n", false)
 end, {
-  desc = "[copilot] accept suggestion",
-  silent = true,
+	desc = "[copilot] accept suggestion",
+	silent = true,
 })

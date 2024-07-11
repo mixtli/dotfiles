@@ -1,81 +1,89 @@
 return {
-  -- My plugins here
-  "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
-  "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
-  'tpope/vim-surround',
-  "nvim-tree/nvim-web-devicons",
-  'weirongxu/plantuml-previewer.vim',
-  "moll/vim-bbye",
-  'kdheepak/lazygit.nvim',
-  "antoinemadec/FixCursorHold.nvim", -- This is needed to fix lsp doc highlight
-  "tpope/vim-unimpaired",
-  "nvim-neotest/nvim-nio",
-  'ludovicchabant/vim-gutentags',
-  'sindrets/diffview.nvim',
-  -- Colorschemes
-  "lunarvim/darkplus.nvim",
-  -- "navarasu/onedark.nvim",
-  "ellisonleao/gruvbox.nvim",
-  -- cmp plugins
-  "hrsh7th/nvim-cmp", -- The completion plugin
-  "hrsh7th/cmp-buffer", -- buffer completions
-  "hrsh7th/cmp-path", -- path completions
-  "hrsh7th/cmp-cmdline", -- cmdline completions
-  "saadparwaiz1/cmp_luasnip", -- snippet completions
---  "hrsh7th/cmp-nvim-lsp",
-  -- snippets
-  "L3MON4D3/LuaSnip", --snippet engine
-  "rafamadriz/friendly-snippets", -- a bunch of snippets to use
-  'ianding1/leetcode.vim',
-  -- Testing 
-  'vim-test/vim-test',
-  'tpope/vim-dispatch',
+	-- My plugins here
+	"nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
+	"nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
+	"nvim-tree/nvim-web-devicons",
+	"weirongxu/plantuml-previewer.vim",
+	"mattn/emmet-vim",
+	"moll/vim-bbye",
+	"kdheepak/lazygit.nvim",
+	"antoinemadec/FixCursorHold.nvim", -- This is needed to fix lsp doc highlight
+	"tpope/vim-unimpaired",
+	"nvim-neotest/nvim-nio",
+	"ludovicchabant/vim-gutentags",
+	"sindrets/diffview.nvim",
+	-- Colorschemes
+	"lunarvim/darkplus.nvim",
+	-- "navarasu/onedark.nvim",
+	"ellisonleao/gruvbox.nvim",
+	-- cmp plugins
+	"hrsh7th/nvim-cmp", -- The completion plugin
+	"hrsh7th/cmp-buffer", -- buffer completions
+	"hrsh7th/cmp-path", -- path completions
+	"hrsh7th/cmp-cmdline", -- cmdline completions
+	"saadparwaiz1/cmp_luasnip", -- snippet completions
+	"hrsh7th/cmp-nvim-lsp",
+	-- snippets
+	"rafamadriz/friendly-snippets", -- a bunch of snippets to use
+	"ianding1/leetcode.vim",
+	-- Testing
+	"vim-test/vim-test",
 
-  -- Treesitter
-  "JoosepAlviste/nvim-ts-context-commentstring",
--- { "aserowy/tmux.nvim", branch='main'},
+	"radenling/vim-dispatch-neovim",
+	"tpope/vim-dispatch",
+	"clojure-vim/vim-jack-in",
 
-  -- 'tpope/vim-commentary',
-  -- 'knubie/vim-kitty-navigator',
-  'christoomey/vim-tmux-navigator',
-  'christoomey/vim-tmux-runner',
-  'sbdchd/vim-run',
-  'kevinhwang91/rnvimr',
+	-- Treesitter
+	"JoosepAlviste/nvim-ts-context-commentstring",
+	-- { "aserowy/tmux.nvim", branch='main'},
 
-  -- Git
-  "tpope/vim-fugitive",
-  "tpope/vim-rhubarb",
+	-- 'tpope/vim-commentary',
+	-- 'knubie/vim-kitty-navigator',
+	"christoomey/vim-tmux-navigator",
+	"christoomey/vim-tmux-runner",
+	"sbdchd/vim-run",
+	"kevinhwang91/rnvimr",
 
-  -- Solidity support.  Once LSP is better, maybe remove this
-  'thesis/vim-solidity',
+	-- Rice
+	"HiPhish/rainbow-delimiters.nvim",
 
-  'alvan/vim-closetag',
+	-- Git
+	"tpope/vim-fugitive",
+	"tpope/vim-rhubarb",
 
-  -- Devcontainers
-  'jamestthompson3/nvim-remote-containers',
+	-- Solidity support.  Once LSP is better, maybe remove this
+	"thesis/vim-solidity",
 
-  -- Language support
-  'towolf/vim-helm',
-  'aklt/plantuml-syntax',
+	"alvan/vim-closetag",
 
-  -- Java
-  'mfussenegger/nvim-jdtls',
+	-- Devcontainers
+	"jamestthompson3/nvim-remote-containers",
+	"microsoft/vscode-java-test",
+	"microsoft/java-debug",
 
-  -- Ruby
-  'RRethy/nvim-treesitter-endwise',
-  'vim-ruby/vim-ruby',
-  'tpope/vim-rails',
+	-- Language support
+	"towolf/vim-helm",
+	"aklt/plantuml-syntax",
 
-  -- Debugging
-  'mfussenegger/nvim-dap',
-  'nvim-telescope/telescope-dap.nvim',
-  'theHamsta/nvim-dap-virtual-text',
-  'mfussenegger/nvim-dap-python',
+	-- Ruby
+	"RRethy/nvim-treesitter-endwise",
+	"vim-ruby/vim-ruby",
+	"tpope/vim-rails",
 
-  'martinda/Jenkinsfile-vim-syntax',
-  'tyru/open-browser.vim',
+	-- Clojure
+	"tpope/vim-fireplace",
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+	-- Racket
+	"benknoble/vim-racket",
+	-- Debugging
+	"mfussenegger/nvim-dap",
+	"nvim-telescope/telescope-dap.nvim",
+	"theHamsta/nvim-dap-virtual-text",
+	"mfussenegger/nvim-dap-python",
+
+	"martinda/Jenkinsfile-vim-syntax",
+	"tyru/open-browser.vim",
+
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
 }
-

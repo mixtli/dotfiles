@@ -1,6 +1,8 @@
 config/.config/nvim/.config/nvim/bundle/*
 config/.config/nvim/.config/nvim/autoload/plugged/*
 mutt/.mutt
+mutt/.mailsynclastrun
+
 __pycache__
 .DS_Store
 config/zsh/.zsh/appen.zsh

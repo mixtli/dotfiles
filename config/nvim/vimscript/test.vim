@@ -1,5 +1,3 @@
-" let test#strategy = "vtr"
-
 nmap <silent> t<C-n> :TestNearest<CR>
 nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
@@ -10,5 +8,8 @@ function! DockerTransform(cmd) abort
   return "docker compose run local " . a:cmd
 endfunction
 
-let g:test#custom_transformations = {'docker': function('DockerTransform')}
-let g:test#transformation = 'docker'
+" let g:test#custom_transformations = {'docker': function('DockerTransform')}
+" let g:test#transformation = 'docker'
+
+let test#java#runner = 'gradletest'
+let test#clojure#runner = 'fireplacetest'

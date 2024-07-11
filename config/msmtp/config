@@ -1,0 +1,11 @@
+account ronmcclain1975@gmail.com
+host smtp.gmail.com
+port 465
+from ronmcclain1975@gmail.com
+user ronmcclain1975@gmail.com
+passwordeval "pass ronmcclain1975@gmail.com"
+auth on
+tls on
+tls_trust_file	/etc/ssl/cert.pem
+logfile /Users/mixtli/.local/state/msmtp/msmtp.log
+tls_starttls off

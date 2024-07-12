@@ -26,3 +26,5 @@ config/gcloud
 config/zsh/.zsh_sessions
 node_modules
 
+
+config/github-copilot/hosts.json

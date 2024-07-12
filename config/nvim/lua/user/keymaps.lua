@@ -64,6 +64,8 @@ keymap("n", "-", ":lua MiniFiles.open()<cr>", opts)
 
 keymap("n", [[<C-p>]], ":ToggleTerm direction=float<cr>", opts)
 
+vim.api.nvim_set_keymap("n", "gx", [[:silent execute '!open' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+
 keymap(
 	"n",
 	"<C-f>",

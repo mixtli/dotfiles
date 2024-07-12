@@ -3,6 +3,9 @@ config/.config/nvim/.config/nvim/autoload/plugged/*
 mutt/.mutt
 mutt/.mailsynclastrun
 
+
+config/elinks/cookies
+
 __pycache__
 .DS_Store
 config/zsh/.zsh/appen.zsh
@@ -22,3 +25,4 @@ config/tmux/plugins
 config/gcloud
 config/zsh/.zsh_sessions
 node_modules
+

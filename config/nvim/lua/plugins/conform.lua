@@ -11,6 +11,7 @@ return {
 			javascriptreact = { "prettier" },
 			typescriptreact = { "prettier" },
 			css = { "prettier" },
+			golang = { "golines" },
 			html = { "prettier" },
 			json = { "prettier" },
 			yaml = { "prettier" },

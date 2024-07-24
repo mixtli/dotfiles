@@ -189,14 +189,18 @@ local mappings = {
 		T = { "<cmd>lua require('dap').terminate()<cr>", "Terminate" },
 		D = { "<cmd>lua require('dap').disconnect()<cr>", "Disconnect" },
 	},
+	-- D = {
+	-- 	name = "Devspace",
+	-- 	b = { "<cmd>lua _TOGGLE_DEVSPACE_BUILD()<CR>", "devspace build" },
+	-- 	d = { "<cmd>lua _TOGGLE_DEVSPACE_DEV()<CR>", "devspace dev" },
+	-- 	D = { "<cmd>lua _TOGGLE_DEVSPACE_DEPLOY()<CR>", "devspace deploy" },
+	-- 	e = { "<cmd>lua _TOGGLE_DEVSPACE_ENTER()<CR>", "devspace enter" },
+	-- 	l = { "<cmd>lua _TOGGLE_DEVSPACE_DEPLOY_LOCAL()<CR>", "devspace deploy --local" },
+	-- 	t = { "<cmd>lua _TOGGLE_DEVSPACE_TESTS()<CR>", "devspace run tests" },
+	-- },
 	D = {
-		name = "Devspace",
-		b = { "<cmd>lua _TOGGLE_DEVSPACE_BUILD()<CR>", "devspace build" },
-		d = { "<cmd>lua _TOGGLE_DEVSPACE_DEV()<CR>", "devspace dev" },
-		D = { "<cmd>lua _TOGGLE_DEVSPACE_DEPLOY()<CR>", "devspace deploy" },
-		e = { "<cmd>lua _TOGGLE_DEVSPACE_ENTER()<CR>", "devspace enter" },
-		l = { "<cmd>lua _TOGGLE_DEVSPACE_DEPLOY_LOCAL()<CR>", "devspace deploy --local" },
-		t = { "<cmd>lua _TOGGLE_DEVSPACE_TESTS()<CR>", "devspace run tests" },
+		name = "Database",
+		t = { "<cmd>DBUIToggle<cr>", "Toggle Database UI" },
 	},
 	e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	E = {
@@ -209,7 +213,13 @@ local mappings = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown())<cr>",
 		"Find files",
 	},
-	F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	-- F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	F = {
+		function()
+			require("telescope").extensions.live_grep_args.live_grep_args()
+		end,
+		"Find Text",
+	},
 	g = {
 		name = "Git",
 		a = { "<cmd>Git add %<cr>", "Git add" },
@@ -288,6 +298,39 @@ local mappings = {
 		[">"] = { "<cmd>diffget REMOTE<cr>", "Use Remote" },
 		["<"] = { "<cmd>diffget LOCAL<cr>", "Use Local" },
 	},
+	h = {
+		name = "HTTP Rest",
+		r = {
+			function()
+				require("kulala").run()
+			end,
+			"Run",
+		},
+		t = {
+			function()
+				require("kulala").toggle_view()
+			end,
+			"Toggle View",
+		},
+		p = {
+			function()
+				require("kulala").jump_prev()
+			end,
+			"Previous",
+		},
+		n = {
+			function()
+				require("kulala").jump_next()
+			end,
+			"Next",
+		},
+		e = {
+			function()
+				require("kulala").set_selected_env()
+			end,
+			"Environment",
+		},
+	},
 	J = {
 		name = "Java",
 		n = { "<cmd>lua require('jdtls').test_nearest_method()<cr>", "Test Nearest" },
@@ -345,6 +388,12 @@ local mappings = {
 		d = tmux_term.run_wk({ cmd = "devspace dev", name = "Devspace Dev", open_as = "pane", size = "30%" }),
 		t = tmux_term.run_wk({ cmd = "make local_test", name = "make local_test", open_as = "pane", size = "30%" }),
 	},
+	M = {
+		name = "Markdown",
+		r = { "<cmd>RenderMarkdownToggle<cr>", "Toggle Render" },
+		P = { "<cmd>MarkdownPreview<cr>", "Markdown Preview" },
+		p = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview Toggle" },
+	},
 	n = {
 		name = "Noice",
 		h = { "<cmd>Noice history<cr>", "Noice history" },
@@ -363,8 +412,11 @@ local mappings = {
 	o = {
 		name = "Overseer",
 		b = { "<cmd>OverseerBuild<cr>", "Build" },
+		c = { "<cmd>CompilerOpen<cr>", "Compile" },
+		C = { "<cmd>CompilerStop<cr>CompilerRedo<cr>", "Compiler Redo" },
+		T = { "<cmd>CompilerToggleResults<cr>", "Toggle Compiler" },
 		r = { "<cmd>OverseerRun<cr>", "Run" },
-		c = { "<cmd>OverseerRunCmd<cr>", "Run Command" },
+		R = { "<cmd>OverseerRunCmd<cr>", "Run Command" },
 		i = { "<cmd>OverseerInfo<cr>", "Info" },
 		t = { "<cmd>OverseerToggle<cr>", "Toggle" },
 	},
@@ -387,7 +439,7 @@ local mappings = {
 		l = { "Send Line" },
 		m = { "Send Mark" },
 	},
-	R = { "<cmd>Run<cr>", "Run" },
+	R = { "<cmd>RunCode<cr>", "Run" },
 	s = {
 		name = "Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -422,6 +474,7 @@ local mappings = {
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
 		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
 		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+		d = { "<cmd>lua _LAZY_DOCKER_TOGGLE()<cr>", "LazyDocker" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },

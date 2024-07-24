@@ -19,13 +19,6 @@ local diff = {
 	cond = hide_in_width,
 }
 
-local mode = {
-	"mode",
-	fmt = function(str)
-		return "-- " .. str .. " --"
-	end,
-}
-
 local filetype = {
 	"filetype",
 	icons_enabled = false,
@@ -60,7 +53,24 @@ end
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "otavioschwanck/tmux-awesome-manager.nvim" },
+	enabled = true,
 	opts = {
+		options = {
+			--theme = "gruvbox",
+			theme = "auto",
+			disabled_filetypes = {
+				"dapui_watches",
+				"dapui_breakpoints",
+				"dapui_scopes",
+				"dapui_console",
+				"dapui_stacks",
+				"dap-repl",
+				"alpha",
+				"dashboard",
+				"NvimTree",
+				"Outline",
+			},
+		},
 		icons_enabled = true,
 		theme = "auto",
 		component_separators = { left = "", right = "" },
@@ -78,48 +88,70 @@ return {
 			"dap-repl",
 		},
 		always_divide_middle = true,
-		globalstatus = true,
+		globalstatus = false,
 		sections = {
 			lualine_a = { branch, diagnostics },
+			lualine_b = {},
 			--lualine_b = { mode },
-			-- lualine_b = { require("auto-session.lib").current_session_name },
+			--lualine_c = { require("auto-session.lib").current_session_name },
 
-			lualine_c = {
-				function()
-					return require("tmux-awesome-manager.src.integrations.status").open_terms()
-				end,
-			},
+			-- lualine_c = {
+			-- 	function()
+			-- 		return require("tmux-awesome-manager.src.integrations.status").open_terms()
+			-- 	end,
+			-- },
 			-- lualine_x = { "encoding", "fileformat", "filetype" },
 			lualine_x = { diff, spaces, "encoding", filetype },
-			lualine_y = { location },
-			lualine_z = { progress },
-		},
-		winbar = {
-			lualine_a = {},
-			lualine_b = {},
-			lualine_c = { { "filename", color = { fg = "#55aa88", bg = "lightgrey", gui = "italic,bold" } } },
-			lualine_x = {},
 			lualine_y = {},
-			lualine_z = {},
-		},
-
-		inactive_winbar = {
-			lualine_a = {},
-			lualine_b = {},
-			lualine_c = { { "filename", color = { fg = "#ffaa88", bg = "grey", gui = "italic,bold" } } },
-			lualine_x = {},
-			lualine_y = {},
-			lualine_z = {},
+			lualine_z = { location },
 		},
 		inactive_sections = {
-			lualine_a = {},
+			lualine_a = { { "filename", status = true } },
 			lualine_b = {},
-			lualine_c = { "filename" },
-			lualine_x = { "location" },
+			lualine_c = {},
+			lualine_x = {},
 			lualine_y = {},
-			lualine_z = {},
+			lualine_z = { "location" },
 		},
-		tabline = {},
+		-- winbar = {
+		-- 	lualine_a = {
+		-- 		-- {
+		-- 		-- 	"filename",
+		-- 		-- 	path = 2,
+		-- 		-- 	status = true,
+		-- 		-- 	-- color = { fg = "#550088", bg = "lightgrey", gui = "italic,bold" },
+		-- 		-- },
+		-- 	},
+		-- 	lualine_b = {},
+		-- 	lualine_c = {},
+		-- 	lualine_x = {},
+		-- 	lualine_y = {},
+		-- 	lualine_z = {},
+		-- },
+		--
+		-- inactive_winbar = {
+		-- 	lualine_a = {
+		-- 		-- {
+		-- 		-- 	"filename",
+		-- 		-- 	path = 2,
+		-- 		-- 	status = true,
+		-- 		-- 	-- color = { fg = "#330055", bg = "grey", gui = "italic,bold" },
+		-- 		-- },
+		-- 	},
+		-- 	lualine_b = {},
+		-- 	lualine_c = {},
+		-- 	lualine_x = {},
+		-- 	lualine_y = {},
+		-- 	lualine_z = {},
+		-- },
+		-- tabline = {
+		-- 	lualine_a = {},
+		-- 	lualine_b = {},
+		-- 	lualine_c = {},
+		-- 	lualine_x = {},
+		-- 	lualine_y = {},
+		-- 	lualine_z = {},
+		-- },
 		extensions = {},
 	},
 }

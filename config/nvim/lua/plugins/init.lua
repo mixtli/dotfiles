@@ -14,7 +14,10 @@ return {
 	"sindrets/diffview.nvim",
 	-- Colorschemes
 	"lunarvim/darkplus.nvim",
+	"folke/tokyonight.nvim",
 	-- "navarasu/onedark.nvim",
+	"catppuccin/nvim",
+
 	"ellisonleao/gruvbox.nvim",
 	-- cmp plugins
 	"hrsh7th/nvim-cmp", -- The completion plugin
@@ -39,7 +42,6 @@ return {
 
 	-- 'tpope/vim-commentary',
 	-- 'knubie/vim-kitty-navigator',
-	"christoomey/vim-tmux-navigator",
 	"christoomey/vim-tmux-runner",
 	"sbdchd/vim-run",
 	"kevinhwang91/rnvimr",
@@ -82,7 +84,10 @@ return {
 	"mfussenegger/nvim-dap-python",
 
 	"martinda/Jenkinsfile-vim-syntax",
+
+	-- Web
 	"tyru/open-browser.vim",
+	"yuratomo/w3m.vim",
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

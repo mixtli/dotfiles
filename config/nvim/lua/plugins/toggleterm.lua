@@ -54,6 +54,12 @@ return {
 			node:toggle()
 		end
 
+		local lazydocker = Terminal:new({ cmd = "lazydocker", hidden = true })
+
+		function _LAZY_DOCKER_TOGGLE()
+			lazydocker:toggle()
+		end
+
 		local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
 
 		function _NCDU_TOGGLE()

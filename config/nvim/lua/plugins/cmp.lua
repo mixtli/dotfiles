@@ -8,6 +8,7 @@ return {
 		"onsails/lspkind.nvim",
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-path",
+		"ray-x/cmp-sql",
 	},
 
 	config = function(_, opts)
@@ -51,7 +52,7 @@ return {
 				["<C-e>"] = cmp.mapping.abort(),
 				-- ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				-- ... Your other mappings ...
-				["<CR>"] = cmp.mapping(function(fallback)
+				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						if luasnip.expandable() then
 							luasnip.expand()
@@ -65,7 +66,7 @@ return {
 					end
 				end),
 
-				["<Tab>"] = cmp.mapping(function(fallback)
+				["<C-j>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
 					elseif luasnip.locally_jumpable(1) then
@@ -75,7 +76,7 @@ return {
 					end
 				end, { "i", "s" }),
 
-				["<S-Tab>"] = cmp.mapping(function(fallback)
+				["<C-k>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
 					elseif luasnip.locally_jumpable(-1) then
@@ -123,6 +124,7 @@ return {
 			sources = {
 				{ name = "vim-dadbod-completion" },
 				{ name = "buffer" },
+				{ name = "sql" },
 			},
 		})
 	end,

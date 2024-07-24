@@ -42,3 +42,5 @@ export HISTFILE="$XDG_DATA_HOME/.zhistory"    # History filepath
 export HISTSIZE=10000                   # Maximum events for internal history
 export SAVEHIST=10000                   # Maximum events in history file
 export AICHAT_CONFIG_DIR=$HOME/.config/aichat
+export DYLD_LIBRARY_PATH="$(/opt/homebrew/bin/brew --prefix)/lib:$DYLD_LIBRARY_PATH"
+

@@ -3,9 +3,14 @@ return {
 	-- event = "BufRead",
 	ft = { "ruby", "python", "lua", "java" },
 	--cond = false,
+	opts = {
+		symbol_in_winbar = {
+			show_file = false,
+		},
+	},
 
-	config = function()
-		require("lspsaga").setup({})
+	config = function(_, opts)
+		require("lspsaga").setup(opts)
 		-- Most of the keymaps are defined in which-key prefixed by <Leader>-l
 		-- The ones here are the ones that don't go in leader.. mostly prefixed by g for quick access
 		local keymap = vim.keymap.set

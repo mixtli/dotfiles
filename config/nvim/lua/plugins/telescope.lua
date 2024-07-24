@@ -1,8 +1,18 @@
 return {
 	"nvim-telescope/telescope.nvim",
+	dependencies = {
+		{
+			"nvim-telescope/telescope-live-grep-args.nvim",
+			-- This will not install any breaking changes.
+			-- For major updates, this must be adjusted manually.
+			version = "^1.0.0",
+		},
+	},
+
 	config = function()
 		local actions = require("telescope.actions")
 		local trouble = require("trouble.sources.telescope")
+		local lga_actions = require("telescope-live-grep-args.actions")
 		require("telescope").setup({
 			defaults = {
 				prompt_prefix = " ",
@@ -82,11 +92,31 @@ return {
 				--   picker_config_key = value,
 				--   ...
 				-- }
+				colorscheme = { enable_preview = true },
+
 				-- Now the picker_config_key will be applied every time you call this
 				-- builtin picker
 			},
+			extensions = {
+				live_grep_args = {
+					auto_quoting = true, -- enable/disable auto-quoting
+					-- define mappings, e.g.
+					mappings = { -- extend mappings
+						i = {
+							["<C-k>"] = lga_actions.quote_prompt(),
+							["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+							-- freeze the current list and start a fuzzy search in the frozen list
+							["<C-space>"] = actions.to_fuzzy_refine,
+						},
+					},
+					-- ... also accepts theme settings, for example:
+					-- theme = "dropdown", -- use dropdown theme
+					-- theme = { }, -- use own theme spec
+					-- layout_config = { mirror=true }, -- mirror preview pane
+				},
+			},
 		})
+		require("telescope").load_extension("live_grep_args")
+		require("telescope").load_extension("file_browser")
 	end,
 }
-
--- require("telescope").load_extension "file_browser"

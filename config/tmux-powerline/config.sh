@@ -55,6 +55,7 @@
 	TMUX_POWERLINE_SEG_AIR_LON=""
 	# Your Open Weather API Key:
 	TMUX_POWERLINE_SEG_AIR_OPEN_WEATHER_API_KEY=""
+    export TMUX_POWERLINE_SEG_WEATHER_LOCATION="Moraga, CA"
 # }
 
 # battery.sh {
@@ -391,8 +392,9 @@
 	export TMUX_POWERLINE_SEG_WEATHER_JSON="jq"
 	# Your location
 	# Latitude and Longtitude for use with yr.no
-	TMUX_POWERLINE_SEG_WEATHER_LAT=""
-	TMUX_POWERLINE_SEG_WEATHER_LON=""
+	#TMUX_POWERLINE_SEG_WEATHER_LAT=""
+	#TMUX_POWERLINE_SEG_WEATHER_LON=""
+    export TMUX_POWERLINE_SEG_WEATHER_LOCATION=2453896
 # }
 
 # xkb_layout.sh {

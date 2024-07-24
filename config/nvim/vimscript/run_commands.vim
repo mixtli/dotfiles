@@ -10,3 +10,7 @@ let g:run_cmd_c = [
                 \ run#defaults#basefilename()
                 \ ]
 let g:run_cmd_python = ['python3']
+let g:run_cmd_go = ['go', 'build', '-o', 'out', '&&', './out' ]
+
+
+let g:run_auto_close = 0
